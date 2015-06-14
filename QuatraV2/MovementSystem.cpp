@@ -2,15 +2,15 @@
 
 MovementSystem::MovementSystem()
 {
-    _flags = ComponentFlag::Velocity | ComponentFlag::Input;
+    _types = ComponentType::Velocity | ComponentType::Input;
 }
 
 void MovementSystem::VUpdate(std::vector<Entity*> entities)
 {
     for (Entity* entity : entities) {
-        if ((entity->_flags & _flags) == _flags) {
-            VelocityComponent* velocity = dynamic_cast<VelocityComponent*>(entity->_components[ComponentFlag::Velocity]);
-            InputComponent* input = dynamic_cast<InputComponent*>(entity->_components[ComponentFlag::Input]);
+        if ((entity->_types & _types) == _types) {
+            VelocityComponent* velocity = dynamic_cast<VelocityComponent*>(entity->GetComponent(ComponentType::Velocity));
+            InputComponent* input = dynamic_cast<InputComponent*>(entity->GetComponent(ComponentType::Input));
 
             if (input->_moveUpKeyPressed) {
                 velocity->_velocity.y = -velocity->_acceleration;

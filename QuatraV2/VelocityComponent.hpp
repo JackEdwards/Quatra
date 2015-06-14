@@ -10,7 +10,7 @@ public:
     float _acceleration;
 
 public:
-    VelocityComponent(float x, float y, float acceleration);
+    VelocityComponent(sf::Vector2f velocity, float acceleration);
 };
 
 #endif

@@ -11,6 +11,8 @@
 		0403F4821B2BAEF300BCAAC4 /* PhysicsSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0403F4801B2BAEF300BCAAC4 /* PhysicsSystem.cpp */; };
 		041FAD7D1B2C6B3E0078B837 /* FaceCursorComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041FAD7B1B2C6B3E0078B837 /* FaceCursorComponent.cpp */; };
 		041FAD801B2C6B4C0078B837 /* FaceCursorSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041FAD7E1B2C6B4C0078B837 /* FaceCursorSystem.cpp */; };
+		041FAD8D1B2C9B9F0078B837 /* enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = 041FAD8C1B2C9B9F0078B837 /* enemy.png */; };
+		041FAD901B2C9BAB0078B837 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041FAD8E1B2C9BAB0078B837 /* Enemy.cpp */; };
 		046098FE1B29C5CD00231625 /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 046098FD1B29C5CD00231625 /* ResourcePath.mm */; };
 		046099011B29C5CD00231625 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 046099001B29C5CD00231625 /* main.cpp */; };
 		046099081B29C5CE00231625 /* sansation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 046099071B29C5CE00231625 /* sansation.ttf */; };
@@ -34,6 +36,10 @@
 		041FAD7C1B2C6B3E0078B837 /* FaceCursorComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FaceCursorComponent.hpp; sourceTree = "<group>"; };
 		041FAD7E1B2C6B4C0078B837 /* FaceCursorSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FaceCursorSystem.cpp; sourceTree = "<group>"; };
 		041FAD7F1B2C6B4C0078B837 /* FaceCursorSystem.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FaceCursorSystem.hpp; sourceTree = "<group>"; };
+		041FAD8A1B2C9A200078B837 /* ComponentType.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ComponentType.hpp; sourceTree = "<group>"; };
+		041FAD8C1B2C9B9F0078B837 /* enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy.png; sourceTree = "<group>"; };
+		041FAD8E1B2C9BAB0078B837 /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
+		041FAD8F1B2C9BAB0078B837 /* Enemy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Enemy.hpp; sourceTree = "<group>"; };
 		046098F81B29C5CD00231625 /* QuatraV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuatraV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		046098FC1B29C5CD00231625 /* QuatraV2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QuatraV2-Info.plist"; sourceTree = "<group>"; };
 		046098FD1B29C5CD00231625 /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
@@ -52,7 +58,6 @@
 		0460992B1B29CDC800231625 /* System.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = System.hpp; sourceTree = "<group>"; };
 		046099301B29D79F00231625 /* SpriteComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteComponent.cpp; sourceTree = "<group>"; };
 		046099341B29D7B100231625 /* VelocityComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VelocityComponent.cpp; sourceTree = "<group>"; };
-		0460993A1B2B0D4C00231625 /* ComponentFlag.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ComponentFlag.hpp; sourceTree = "<group>"; };
 		0460993C1B2B0E4800231625 /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
 		0460993E1B2B11FE00231625 /* InputSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InputSystem.cpp; sourceTree = "<group>"; };
 		0460993F1B2B11FE00231625 /* InputSystem.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = InputSystem.hpp; sourceTree = "<group>"; };
@@ -78,6 +83,7 @@
 			children = (
 				0460993C1B2B0E4800231625 /* Entity.cpp */,
 				0460991A1B29C80600231625 /* Player.cpp */,
+				041FAD8E1B2C9BAB0078B837 /* Enemy.cpp */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -108,8 +114,8 @@
 		0403F47A1B2B3E3200BCAAC4 /* Systems */ = {
 			isa = PBXGroup;
 			children = (
-				041FAD7F1B2C6B4C0078B837 /* FaceCursorSystem.hpp */,
 				0460992B1B29CDC800231625 /* System.hpp */,
+				041FAD7F1B2C6B4C0078B837 /* FaceCursorSystem.hpp */,
 				0460993F1B2B11FE00231625 /* InputSystem.hpp */,
 				0403F47E1B2BAADB00BCAAC4 /* MovementSystem.hpp */,
 				0403F4811B2BAEF300BCAAC4 /* PhysicsSystem.hpp */,
@@ -121,9 +127,9 @@
 		0403F47B1B2B3E3600BCAAC4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				0460993A1B2B0D4C00231625 /* ComponentFlag.hpp */,
-				041FAD7C1B2C6B3E0078B837 /* FaceCursorComponent.hpp */,
+				041FAD8A1B2C9A200078B837 /* ComponentType.hpp */,
 				046099201B29CB0F00231625 /* Component.hpp */,
+				041FAD7C1B2C6B3E0078B837 /* FaceCursorComponent.hpp */,
 				0460991F1B29CAD200231625 /* VelocityComponent.hpp */,
 				0460991D1B29C8E800231625 /* SpriteComponent.hpp */,
 				046099481B2B133400231625 /* InputComponent.hpp */,
@@ -136,6 +142,7 @@
 			children = (
 				046099181B29C73B00231625 /* Entity.hpp */,
 				0460991B1B29C80600231625 /* Player.hpp */,
+				041FAD8F1B2C9BAB0078B837 /* Enemy.hpp */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -182,6 +189,7 @@
 			children = (
 				046099071B29C5CE00231625 /* sansation.ttf */,
 				046099151B29C72700231625 /* player.png */,
+				041FAD8C1B2C9B9F0078B837 /* enemy.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -268,6 +276,7 @@
 			files = (
 				046099161B29C72700231625 /* player.png in Resources */,
 				046099081B29C5CE00231625 /* sansation.ttf in Resources */,
+				041FAD8D1B2C9B9F0078B837 /* enemy.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +315,7 @@
 				046099311B29D79F00231625 /* SpriteComponent.cpp in Sources */,
 				046099141B29C66200231625 /* Game.cpp in Sources */,
 				046099011B29C5CD00231625 /* main.cpp in Sources */,
+				041FAD901B2C9BAB0078B837 /* Enemy.cpp in Sources */,
 				046099491B2B133400231625 /* InputComponent.cpp in Sources */,
 				046098FE1B29C5CD00231625 /* ResourcePath.mm in Sources */,
 			);

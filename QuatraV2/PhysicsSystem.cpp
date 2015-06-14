@@ -2,15 +2,15 @@
 
 PhysicsSystem::PhysicsSystem()
 {
-    _flags = ComponentFlag::Velocity | ComponentFlag::Sprite;
+    _types = ComponentType::Velocity | ComponentType::Sprite;
 }
 
-void PhysicsSystem::VUpdate(std::vector<Entity *> entities)
+void PhysicsSystem::VUpdate(std::vector<Entity*> entities)
 {
     for (Entity* entity : entities) {
-        if ((entity->_flags & _flags) == _flags) {
-            VelocityComponent* velocity = dynamic_cast<VelocityComponent*>(entity->_components[ComponentFlag::Velocity]);
-            SpriteComponent* sprite = dynamic_cast<SpriteComponent*>(entity->_components[ComponentFlag::Sprite]);
+        if ((entity->_types & _types) == _types) {
+            VelocityComponent* velocity = dynamic_cast<VelocityComponent*>(entity->GetComponent(ComponentType::Velocity));
+            SpriteComponent* sprite = dynamic_cast<SpriteComponent*>(entity->GetComponent(ComponentType::Sprite));
             
             sprite->_sprite.move(velocity->_velocity);
             velocity->_velocity = sf::Vector2f(0.0, 0.0);

@@ -6,6 +6,16 @@ Game::Game()
   _faceCursor(&_window)
 {
     _entities.push_back(new Player());
+    _entities.push_back(new Enemy(sf::Vector2f(100, 100)));
+    _entities.push_back(new Enemy(sf::Vector2f(600, 500)));
+    _entities.push_back(new Enemy(sf::Vector2f(500, 200)));
+}
+
+Game::~Game()
+{
+    for (int i = 0; i < _entities.size(); ++i) {
+        delete _entities[i];
+    }
 }
 
 void Game::Run()

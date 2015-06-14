@@ -3,12 +3,12 @@
 
 #include <vector>
 #include "Entity.hpp"
-#include "ComponentFlag.hpp"
+#include "ComponentType.hpp"
 
 class System
 {
 public:
-    long _flags;
+    long _types;
 public:
     virtual ~System() {};
     virtual void VUpdate(std::vector<Entity*> entities) = 0;

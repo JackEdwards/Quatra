@@ -2,12 +2,12 @@
 #define COMPONENT_HPP
 
 #include <SFML/Graphics.hpp>
-#include "ComponentFlag.hpp"
+#include "ComponentType.hpp"
 
 class Component
 {
 public:
-    ComponentFlag _flag;
+    ComponentType _type;
 
 public:
     virtual ~Component() = 0;

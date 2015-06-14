@@ -1,7 +1,7 @@
-#ifndef COMPONENTFLAG_HPP
-#define COMPONENTFLAG_HPP
+#ifndef COMPONENTTYPE_HPP
+#define COMPONENTTYPE_HPP
 
-enum ComponentFlag
+enum ComponentType
 {
     Velocity   = 1 << 0,
     Sprite     = 1 << 1,

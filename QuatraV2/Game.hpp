@@ -1,10 +1,12 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 
+#include <iostream>
 #include <SFML/Graphics.hpp>
 #include "ResourcePath.hpp"
 #include "Entity.hpp"
 #include "Player.hpp"
+#include "Enemy.hpp"
 #include "InputSystem.hpp"
 #include "MovementSystem.hpp"
 #include "FaceCursorSystem.hpp"
@@ -26,6 +28,7 @@ private:
     
 public:
     Game();
+    ~Game();
     void Run();
 private:
     void Update();

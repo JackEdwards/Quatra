@@ -2,7 +2,7 @@
 
 RenderSystem::RenderSystem(sf::RenderWindow* window)
 {
-    _flags = ComponentFlag::Sprite;
+    _types = ComponentType::Sprite;
     
     _window = window;
 }
@@ -10,8 +10,8 @@ RenderSystem::RenderSystem(sf::RenderWindow* window)
 void RenderSystem::VUpdate(std::vector<Entity *> entities)
 {
     for (Entity* entity : entities) {
-        if ((entity->_flags & _flags) == _flags) {
-            SpriteComponent* sprite = dynamic_cast<SpriteComponent*>(entity->_components[ComponentFlag::Sprite]);
+        if ((entity->_types & _types) == _types) {
+            SpriteComponent* sprite = dynamic_cast<SpriteComponent*>(entity->GetComponent(ComponentType::Sprite));
 
             _window->draw(sprite->_sprite);
         }

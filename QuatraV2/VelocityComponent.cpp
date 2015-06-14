@@ -1,9 +1,9 @@
 #include "VelocityComponent.hpp"
 
-VelocityComponent::VelocityComponent(float x, float y, float acceleration)
+VelocityComponent::VelocityComponent(sf::Vector2f velocity, float acceleration)
 {
-    _flag = ComponentFlag::Velocity;
+    _type = ComponentType::Velocity;
 
-    _velocity = sf::Vector2f(x, y);
+    _velocity = velocity;
     _acceleration = acceleration;
 }

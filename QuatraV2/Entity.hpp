@@ -7,12 +7,13 @@
 class Entity
 {
 public:
-    std::map<ComponentFlag, Component*> _components;
-    long _flags;
+    std::map<ComponentType, Component*> _components;
+    long _types;
 
 public:
     virtual ~Entity() = 0;
     void AddComponent(Component* component);
+    Component* GetComponent(ComponentType component);
 };
 
 inline Entity::~Entity() {};

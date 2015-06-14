@@ -2,7 +2,7 @@
 
 InputComponent::InputComponent()
 {
-    _flag = ComponentFlag::Input;
+    _type = ComponentType::Input;
 
     _moveUpKeyPressed    = false;
     _moveDownKeyPressed  = false;

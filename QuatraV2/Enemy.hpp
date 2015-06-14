@@ -1,5 +1,5 @@
-#ifndef PLAYER_HPP
-#define PLAYER_HPP
+#ifndef ENEMY_HPP
+#define ENEMY_HPP
 
 #include "Entity.hpp"
 #include "SpriteComponent.hpp"
@@ -7,11 +7,11 @@
 #include "InputComponent.hpp"
 #include "FaceCursorComponent.hpp"
 
-class Player : public Entity
+class Enemy : public Entity
 {
 public:
-    Player();
-    ~Player();
+    Enemy(sf::Vector2f position);
+    ~Enemy();
 };
 
 #endif

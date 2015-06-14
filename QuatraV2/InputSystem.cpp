@@ -2,14 +2,14 @@
 
 InputSystem::InputSystem()
 {
-    _flags = ComponentFlag::Input;
+    _types = ComponentType::Input;
 }
 
 void InputSystem::VUpdate(std::vector<Entity*> entities)
 {
     for (Entity* entity : entities) {
-        if ((entity->_flags & _flags) == _flags) {
-            InputComponent* input = dynamic_cast<InputComponent*>(entity->_components[ComponentFlag::Input]);
+        if ((entity->_types & _types) == _types) {
+            InputComponent* input = dynamic_cast<InputComponent*>(entity->GetComponent(ComponentType::Input));
 
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
                 input->_moveUpKeyPressed = true;

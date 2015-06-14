@@ -2,7 +2,7 @@
 
 FaceCursorSystem::FaceCursorSystem(sf::RenderWindow* window)
 {
-    _flags = ComponentFlag::FaceCursor | ComponentFlag::Sprite;
+    _types = ComponentType::FaceCursor | ComponentType::Sprite;
     
     _window = window;
 }
@@ -10,10 +10,10 @@ FaceCursorSystem::FaceCursorSystem(sf::RenderWindow* window)
 void FaceCursorSystem::VUpdate(std::vector<Entity*> entities)
 {
     for (Entity* entity : entities) {
-        if ((entity->_flags & _flags) == _flags) {
-            SpriteComponent* sprite = dynamic_cast<SpriteComponent*>(entity->_components[ComponentFlag::Sprite]);
+        if ((entity->_types & _types) == _types) {
+            SpriteComponent* sprite = dynamic_cast<SpriteComponent*>(entity->GetComponent(ComponentType::Sprite));
             
-            // Get distance between sprite and mouse
+            // Get distance between sprite and mouses
             int x = sprite->_sprite.getPosition().x - sf::Mouse::getPosition(*_window).x;
             int y = sprite->_sprite.getPosition().y - sf::Mouse::getPosition(*_window).y;
             sf::Vector2i distance = sf::Vector2i(x, y);
