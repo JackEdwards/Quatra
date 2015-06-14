@@ -2,15 +2,8 @@
 
 Player::Player()
 {
-    AddComponent(new SpriteComponent("player.png"));
-    AddComponent(new VelocityComponent(sf::Vector2f(0.0, 0.0), 1.0));
-    AddComponent(new InputComponent());
-    AddComponent(new FaceCursorComponent());
-}
-
-Player::~Player()
-{
-    for (auto iter : _components) {
-        delete iter.second;
-    }
+    AddComponent(std::make_shared<SpriteComponent>("player.png"));
+    AddComponent(std::make_shared<VelocityComponent>(sf::Vector2f(0.0, 0.0), 1.0));
+    AddComponent(std::make_shared<InputComponent>());
+    AddComponent(std::make_shared<FaceCursorComponent>());
 }

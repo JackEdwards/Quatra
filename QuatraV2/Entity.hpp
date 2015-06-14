@@ -7,15 +7,20 @@
 class Entity
 {
 public:
-    std::map<ComponentType, Component*> _components;
+    std::map<ComponentType, ComponentPtr> _components;
     long _types;
 
 public:
     virtual ~Entity() = 0;
-    void AddComponent(Component* component);
-    Component* GetComponent(ComponentType component);
+    bool HasComponent(ComponentType type);
+    void AddComponent(ComponentPtr component);
+    void RemoveComponent(ComponentType type);
+    ComponentPtr GetComponent(ComponentType type);
 };
 
 inline Entity::~Entity() {};
+
+typedef std::shared_ptr<Entity> EntityPtr;
+typedef std::vector<EntityPtr> EntityPtrList;
 
 #endif

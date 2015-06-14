@@ -10,7 +10,7 @@ class PhysicsSystem : public System
 {
 public:
     PhysicsSystem();
-    virtual void VUpdate(std::vector<Entity*> entities);
+    virtual void VUpdate(EntityPtrList entities);
 };
 
 #endif

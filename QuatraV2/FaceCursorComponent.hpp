@@ -9,4 +9,6 @@ public:
     FaceCursorComponent();
 };
 
+typedef std::shared_ptr<FaceCursorComponent> FaceCursorComponentPtr;
+
 #endif

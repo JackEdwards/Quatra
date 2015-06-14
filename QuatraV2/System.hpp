@@ -8,10 +8,11 @@
 class System
 {
 public:
-    long _types;
+    long _lock;
 public:
     virtual ~System() {};
-    virtual void VUpdate(std::vector<Entity*> entities) = 0;
+    virtual void VUpdate(EntityPtrList entities) = 0;
+    bool KeyFitsLock(long key);
 };
 
 #endif

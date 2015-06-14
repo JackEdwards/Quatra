@@ -9,7 +9,7 @@ class MovementSystem : public System
 {
 public:
     MovementSystem();
-    virtual void VUpdate(std::vector<Entity*> entities);
+    virtual void VUpdate(EntityPtrList entities);
 };
 
 #endif

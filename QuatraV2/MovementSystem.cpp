@@ -2,15 +2,15 @@
 
 MovementSystem::MovementSystem()
 {
-    _types = ComponentType::Velocity | ComponentType::Input;
+    _lock = ComponentType::Velocity | ComponentType::Input;
 }
 
-void MovementSystem::VUpdate(std::vector<Entity*> entities)
+void MovementSystem::VUpdate(EntityPtrList entities)
 {
-    for (Entity* entity : entities) {
-        if ((entity->_types & _types) == _types) {
-            VelocityComponent* velocity = dynamic_cast<VelocityComponent*>(entity->GetComponent(ComponentType::Velocity));
-            InputComponent* input = dynamic_cast<InputComponent*>(entity->GetComponent(ComponentType::Input));
+    for (EntityPtr entity : entities) {
+        if (KeyFitsLock(entity->_types)) {
+            VelocityComponentPtr velocity = std::dynamic_pointer_cast<VelocityComponent>(entity->GetComponent(ComponentType::Velocity));
+            InputComponentPtr input = std::dynamic_pointer_cast<InputComponent>(entity->GetComponent(ComponentType::Input));
 
             if (input->_moveUpKeyPressed) {
                 velocity->_velocity.y = -velocity->_acceleration;

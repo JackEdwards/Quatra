@@ -2,16 +2,16 @@
 
 RenderSystem::RenderSystem(sf::RenderWindow* window)
 {
-    _types = ComponentType::Sprite;
+    _lock = ComponentType::Sprite;
     
     _window = window;
 }
 
-void RenderSystem::VUpdate(std::vector<Entity *> entities)
+void RenderSystem::VUpdate(EntityPtrList entities)
 {
-    for (Entity* entity : entities) {
-        if ((entity->_types & _types) == _types) {
-            SpriteComponent* sprite = dynamic_cast<SpriteComponent*>(entity->GetComponent(ComponentType::Sprite));
+    for (EntityPtr entity : entities) {
+        if (KeyFitsLock(entity->_types)) {
+            SpriteComponentPtr sprite = std::dynamic_pointer_cast<SpriteComponent>(entity->GetComponent(ComponentType::Sprite));
 
             _window->draw(sprite->_sprite);
         }

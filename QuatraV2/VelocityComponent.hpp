@@ -13,4 +13,6 @@ public:
     VelocityComponent(sf::Vector2f velocity, float acceleration);
 };
 
+typedef std::shared_ptr<VelocityComponent> VelocityComponentPtr;
+
 #endif

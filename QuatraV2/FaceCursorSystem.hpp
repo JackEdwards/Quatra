@@ -12,7 +12,7 @@ private:
 
 public:
     FaceCursorSystem(sf::RenderWindow* window);
-    virtual void VUpdate(std::vector<Entity*> entities);
+    virtual void VUpdate(EntityPtrList entities);
 };
 
 #endif

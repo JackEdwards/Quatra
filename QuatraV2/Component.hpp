@@ -15,4 +15,6 @@ public:
 
 inline Component::~Component() {};
 
+typedef std::shared_ptr<Component> ComponentPtr;
+
 #endif

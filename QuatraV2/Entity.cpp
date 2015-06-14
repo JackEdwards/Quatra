@@ -1,14 +1,32 @@
 #include "Entity.hpp"
 
-void Entity::AddComponent(Component* component)
+bool Entity::HasComponent(ComponentType type)
 {
-    _components.insert(std::pair<ComponentType, Component*>(component->_type, component));
+    if (_components.count(type) > 0) {
+        return true;
+    }
+    
+    return false;
+}
+
+void Entity::AddComponent(ComponentPtr component)
+{
+    _components.insert(std::pair<ComponentType, ComponentPtr>(component->_type, component));
     _types |= component->_type;
 }
 
-Component* Entity::GetComponent(ComponentType component)
+void Entity::RemoveComponent(ComponentType type)
 {
-    if (_components.count(component) != 0) {
-        return _components[component];
+    if (HasComponent(type)) {
+        _components.erase(type);
+        _types ^= type;
     }
 }
+
+ComponentPtr Entity::GetComponent(ComponentType type)
+{
+    if (HasComponent(type)) {
+        return _components[type];
+    }
+}
+

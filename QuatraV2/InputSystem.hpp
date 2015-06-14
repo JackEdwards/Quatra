@@ -8,7 +8,7 @@ class InputSystem : public System
 {
 public:
     InputSystem();
-    virtual void VUpdate(std::vector<Entity*> entities) override;
+    virtual void VUpdate(EntityPtrList entities) override;
 };
 
 #endif

@@ -25,6 +25,10 @@
 		046099401B2B11FE00231625 /* InputSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0460993E1B2B11FE00231625 /* InputSystem.cpp */; };
 		046099461B2B120E00231625 /* RenderSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 046099441B2B120E00231625 /* RenderSystem.cpp */; };
 		046099491B2B133400231625 /* InputComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 046099471B2B133400231625 /* InputComponent.cpp */; };
+		04BD7A6D1B2DBF9100647C1F /* System.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04BD7A6C1B2DBF9100647C1F /* System.cpp */; };
+		04BD7A701B2DC1D600647C1F /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04BD7A6E1B2DC1D600647C1F /* Bullet.cpp */; };
+		04BD7A731B2DC2B000647C1F /* ProjectileComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04BD7A711B2DC2B000647C1F /* ProjectileComponent.cpp */; };
+		04BD7A771B2DC45200647C1F /* bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 04BD7A761B2DC45200647C1F /* bullet.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +69,12 @@
 		046099451B2B120E00231625 /* RenderSystem.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RenderSystem.hpp; sourceTree = "<group>"; };
 		046099471B2B133400231625 /* InputComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InputComponent.cpp; sourceTree = "<group>"; };
 		046099481B2B133400231625 /* InputComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = InputComponent.hpp; sourceTree = "<group>"; };
+		04BD7A6C1B2DBF9100647C1F /* System.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = System.cpp; sourceTree = "<group>"; };
+		04BD7A6E1B2DC1D600647C1F /* Bullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bullet.cpp; sourceTree = "<group>"; };
+		04BD7A6F1B2DC1D600647C1F /* Bullet.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Bullet.hpp; sourceTree = "<group>"; };
+		04BD7A711B2DC2B000647C1F /* ProjectileComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProjectileComponent.cpp; sourceTree = "<group>"; };
+		04BD7A721B2DC2B000647C1F /* ProjectileComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ProjectileComponent.hpp; sourceTree = "<group>"; };
+		04BD7A761B2DC45200647C1F /* bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +94,7 @@
 				0460993C1B2B0E4800231625 /* Entity.cpp */,
 				0460991A1B29C80600231625 /* Player.cpp */,
 				041FAD8E1B2C9BAB0078B837 /* Enemy.cpp */,
+				04BD7A6E1B2DC1D600647C1F /* Bullet.cpp */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -102,11 +113,13 @@
 		0403F4791B2B3E0D00BCAAC4 /* Systems */ = {
 			isa = PBXGroup;
 			children = (
+				04BD7A6C1B2DBF9100647C1F /* System.cpp */,
 				0460993E1B2B11FE00231625 /* InputSystem.cpp */,
 				0403F47D1B2BAADB00BCAAC4 /* MovementSystem.cpp */,
 				0403F4801B2BAEF300BCAAC4 /* PhysicsSystem.cpp */,
 				046099441B2B120E00231625 /* RenderSystem.cpp */,
 				041FAD7E1B2C6B4C0078B837 /* FaceCursorSystem.cpp */,
+				04BD7A711B2DC2B000647C1F /* ProjectileComponent.cpp */,
 			);
 			name = Systems;
 			sourceTree = "<group>";
@@ -133,6 +146,7 @@
 				0460991F1B29CAD200231625 /* VelocityComponent.hpp */,
 				0460991D1B29C8E800231625 /* SpriteComponent.hpp */,
 				046099481B2B133400231625 /* InputComponent.hpp */,
+				04BD7A721B2DC2B000647C1F /* ProjectileComponent.hpp */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -143,6 +157,7 @@
 				046099181B29C73B00231625 /* Entity.hpp */,
 				0460991B1B29C80600231625 /* Player.hpp */,
 				041FAD8F1B2C9BAB0078B837 /* Enemy.hpp */,
+				04BD7A6F1B2DC1D600647C1F /* Bullet.hpp */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -190,6 +205,7 @@
 				046099071B29C5CE00231625 /* sansation.ttf */,
 				046099151B29C72700231625 /* player.png */,
 				041FAD8C1B2C9B9F0078B837 /* enemy.png */,
+				04BD7A761B2DC45200647C1F /* bullet.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -275,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				046099161B29C72700231625 /* player.png in Resources */,
+				04BD7A771B2DC45200647C1F /* bullet.png in Resources */,
 				046099081B29C5CE00231625 /* sansation.ttf in Resources */,
 				041FAD8D1B2C9B9F0078B837 /* enemy.png in Resources */,
 			);
@@ -303,6 +320,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04BD7A731B2DC2B000647C1F /* ProjectileComponent.cpp in Sources */,
+				04BD7A6D1B2DBF9100647C1F /* System.cpp in Sources */,
 				0403F47F1B2BAADB00BCAAC4 /* MovementSystem.cpp in Sources */,
 				0460993D1B2B0E4800231625 /* Entity.cpp in Sources */,
 				046099401B2B11FE00231625 /* InputSystem.cpp in Sources */,
@@ -314,6 +333,7 @@
 				041FAD7D1B2C6B3E0078B837 /* FaceCursorComponent.cpp in Sources */,
 				046099311B29D79F00231625 /* SpriteComponent.cpp in Sources */,
 				046099141B29C66200231625 /* Game.cpp in Sources */,
+				04BD7A701B2DC1D600647C1F /* Bullet.cpp in Sources */,
 				046099011B29C5CD00231625 /* main.cpp in Sources */,
 				041FAD901B2C9BAB0078B837 /* Enemy.cpp in Sources */,
 				046099491B2B133400231625 /* InputComponent.cpp in Sources */,

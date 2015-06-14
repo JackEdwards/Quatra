@@ -15,4 +15,6 @@ public:
     InputComponent();
 };
 
+typedef std::shared_ptr<InputComponent> InputComponentPtr;
+
 #endif

@@ -12,7 +12,8 @@ public:
 
 public:
     SpriteComponent(std::string fileName);
-    SpriteComponent(std::string fileName, sf::Vector2f position);
 };
+
+typedef std::shared_ptr<SpriteComponent> SpriteComponentPtr;
 
 #endif

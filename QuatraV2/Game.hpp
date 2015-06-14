@@ -13,12 +13,13 @@
 #include "PhysicsSystem.hpp"
 #include "RenderSystem.hpp"
 
+
 class Game
 {
 private:
     sf::RenderWindow _window;
     sf::Clock _clock;
-    std::vector<Entity*> _entities;
+    EntityPtrList _entities;
     InputSystem _input;
     MovementSystem _movement;
     FaceCursorSystem _faceCursor;
@@ -28,7 +29,6 @@ private:
     
 public:
     Game();
-    ~Game();
     void Run();
 private:
     void Update();
