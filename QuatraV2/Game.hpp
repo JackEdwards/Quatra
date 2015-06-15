@@ -17,14 +17,14 @@
 class Game
 {
 private:
-    sf::RenderWindow _window;
-    sf::Clock _clock;
-    EntityPtrList _entities;
-    InputSystem _input;
-    MovementSystem _movement;
-    FaceCursorSystem _faceCursor;
-    PhysicsSystem _physics;
-    RenderSystem _render;
+    sf::RenderWindow m_window;
+    sf::Clock m_clock;
+    EntityPtrList m_entities;
+    InputSystem m_input;
+    MovementSystem m_movement;
+    FaceCursorSystem m_faceCursor;
+    PhysicsSystem m_physics;
+    RenderSystem m_render;
     
     
 public:

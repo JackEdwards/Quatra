@@ -1,16 +1,14 @@
 #include "Game.hpp"
 
 Game::Game()
-: _window(sf::VideoMode(1280, 1280), "Quatra", sf::Style::Close),
-  _render(&_window),
-  _faceCursor(&_window)
+: m_window(sf::VideoMode(1280, 1280), "Quatra", sf::Style::Close)
 {
-    _entities.push_back(std::make_shared<Player>());
+    m_entities.push_back(std::make_shared<Player>());
 }
 
 void Game::Run()
 {
-    while (_window.isOpen()) {
+    while (m_window.isOpen()) {
         Update();
         Render();
     }
@@ -19,30 +17,30 @@ void Game::Run()
 void Game::Update()
 {
     HandleEvents();
-    float deltaTime = _clock.restart().asMilliseconds();
+    float deltaTime = m_clock.restart().asMilliseconds();
     
-    _input.VUpdate(_entities);
-    _movement.VUpdate(_entities);
-    _faceCursor.VUpdate(_entities);
-    _physics.VUpdate(_entities);
+    m_input.Update(m_entities);
+    m_movement.Update(m_entities);
+    m_faceCursor.Update(m_entities, m_window);
+    m_physics.Update(m_entities, deltaTime);
 }
 
 void Game::Render()
 {
-    _window.clear(sf::Color::White);
+    m_window.clear(sf::Color::White);
 
-    _render.VUpdate(_entities);
+    m_render.Update(m_entities, m_window);
 
-    _window.display();
+    m_window.display();
 }
 
 void Game::HandleEvents()
 {
     sf::Event event;
     
-    while (_window.pollEvent(event)) {
+    while (m_window.pollEvent(event)) {
         if (event.type == sf::Event::Closed) {
-            _window.close();
+            m_window.close();
         }
     }
 }

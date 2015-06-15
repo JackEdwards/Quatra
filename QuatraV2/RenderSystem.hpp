@@ -6,11 +6,9 @@
 
 class RenderSystem : public System
 {
-private:
-    sf::RenderWindow* _window;
 public:
-    RenderSystem(sf::RenderWindow* window);
-    virtual void VUpdate(EntityPtrList entities) override;
+    RenderSystem();
+    void Update(EntityPtrList& entities, sf::RenderWindow& window);
 };
 
 #endif

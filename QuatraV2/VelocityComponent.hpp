@@ -6,8 +6,8 @@
 class VelocityComponent : public Component
 {
 public:
-    sf::Vector2f _velocity;
-    float _acceleration;
+    sf::Vector2f m_velocity;
+    float m_acceleration;
 
 public:
     VelocityComponent(sf::Vector2f velocity, float acceleration);

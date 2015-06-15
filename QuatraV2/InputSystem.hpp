@@ -8,7 +8,7 @@ class InputSystem : public System
 {
 public:
     InputSystem();
-    virtual void VUpdate(EntityPtrList entities) override;
+    void Update(EntityPtrList& entities);
 };
 
 #endif

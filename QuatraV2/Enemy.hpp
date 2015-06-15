@@ -10,7 +10,7 @@
 class Enemy : public Entity
 {
 public:
-    Enemy();
+    Enemy(sf::Vector2f position);
 };
 
 #endif

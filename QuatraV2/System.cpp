@@ -2,5 +2,5 @@
 
 bool System::KeyFitsLock(long key)
 {
-    return (key & _lock) == _lock;
+    return (key & m_lock) == m_lock;
 }

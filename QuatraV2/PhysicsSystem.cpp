@@ -2,19 +2,17 @@
 
 PhysicsSystem::PhysicsSystem()
 {
-    _lock = ComponentType::Velocity | ComponentType::Sprite;
+    m_lock = ComponentType::Velocity | ComponentType::Sprite;
 }
 
-void PhysicsSystem::VUpdate(EntityPtrList entities)
+void PhysicsSystem::Update(EntityPtrList& entities, float dt)
 {
     for (EntityPtr entity : entities) {
-        if (KeyFitsLock(entity->_types)) {
-            VelocityComponentPtr velocity = std::dynamic_pointer_cast<VelocityComponent>(entity->GetComponent(ComponentType::Velocity));
-            SpriteComponentPtr sprite = std::dynamic_pointer_cast<SpriteComponent>(entity->GetComponent(ComponentType::Sprite));
+        if (KeyFitsLock(entity->m_types)) {
+            VelocityComponentPtr p_velocity = std::dynamic_pointer_cast<VelocityComponent>(entity->GetComponent(ComponentType::Velocity));
+            SpriteComponentPtr p_sprite = std::dynamic_pointer_cast<SpriteComponent>(entity->GetComponent(ComponentType::Sprite));
             
-            sprite->_sprite.move(velocity->_velocity);
-
-            velocity->_velocity = sf::Vector2f(0.0, 0.0);
+            p_sprite->m_sprite.move(p_velocity->m_velocity * dt);
         }
     }
 }

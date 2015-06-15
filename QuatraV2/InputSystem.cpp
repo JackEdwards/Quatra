@@ -2,19 +2,20 @@
 
 InputSystem::InputSystem()
 {
-    _lock = ComponentType::Input;
+    m_lock = ComponentType::Input;
 }
 
-void InputSystem::VUpdate(EntityPtrList entities)
+void InputSystem::Update(EntityPtrList& entities)
 {
     for (EntityPtr entity : entities) {
-        if (KeyFitsLock(entity->_types)) {
-            InputComponentPtr input = std::dynamic_pointer_cast<InputComponent>(entity->GetComponent(ComponentType::Input));
+        if (KeyFitsLock(entity->m_types)) {
+            InputComponentPtr p_input = std::dynamic_pointer_cast<InputComponent>(entity->GetComponent(ComponentType::Input));
             
-            input->_moveUpKeyPressed    = (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) ? true : false;
-            input->_moveDownKeyPressed  = (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) ? true : false;
-            input->_moveLeftKeyPressed  = (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) ? true : false;
-            input->_moveRightKeyPressed = (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) ? true : false;
+            p_input->m_moveUpKeyPressed    = (sf::Keyboard::isKeyPressed(sf::Keyboard::W))     ? true : false;
+            p_input->m_moveDownKeyPressed  = (sf::Keyboard::isKeyPressed(sf::Keyboard::S))     ? true : false;
+            p_input->m_moveLeftKeyPressed  = (sf::Keyboard::isKeyPressed(sf::Keyboard::A))     ? true : false;
+            p_input->m_moveRightKeyPressed = (sf::Keyboard::isKeyPressed(sf::Keyboard::D))     ? true : false;
+            p_input->m_fireKeyPressed      = (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) ? true : false;
         }
     }
 }

@@ -7,11 +7,11 @@
 class SpriteComponent : public Component
 {
 public:
-    sf::Texture _texture;
-    sf::Sprite _sprite;
+    sf::Texture m_texture;
+    sf::Sprite m_sprite;
 
 public:
-    SpriteComponent(std::string fileName);
+    SpriteComponent(std::string fileName, sf::Vector2f position);
 };
 
 typedef std::shared_ptr<SpriteComponent> SpriteComponentPtr;

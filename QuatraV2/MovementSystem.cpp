@@ -2,27 +2,29 @@
 
 MovementSystem::MovementSystem()
 {
-    _lock = ComponentType::Velocity | ComponentType::Input;
+    m_lock = ComponentType::Velocity | ComponentType::Input;
 }
 
-void MovementSystem::VUpdate(EntityPtrList entities)
+void MovementSystem::Update(EntityPtrList& entities)
 {
     for (EntityPtr entity : entities) {
-        if (KeyFitsLock(entity->_types)) {
-            VelocityComponentPtr velocity = std::dynamic_pointer_cast<VelocityComponent>(entity->GetComponent(ComponentType::Velocity));
-            InputComponentPtr input = std::dynamic_pointer_cast<InputComponent>(entity->GetComponent(ComponentType::Input));
+        if (KeyFitsLock(entity->m_types)) {
+            VelocityComponentPtr p_velocity = std::dynamic_pointer_cast<VelocityComponent>(entity->GetComponent(ComponentType::Velocity));
+            InputComponentPtr p_input = std::dynamic_pointer_cast<InputComponent>(entity->GetComponent(ComponentType::Input));
 
-            if (input->_moveUpKeyPressed) {
-                velocity->_velocity.y = -velocity->_acceleration;
+            p_velocity->m_velocity = sf::Vector2f(0.0, 0.0);
+            
+            if (p_input->m_moveUpKeyPressed) {
+                p_velocity->m_velocity.y = -p_velocity->m_acceleration;
             }
-            if (input->_moveDownKeyPressed) {
-                velocity->_velocity.y = velocity->_acceleration;
+            if (p_input->m_moveDownKeyPressed) {
+                p_velocity->m_velocity.y = p_velocity->m_acceleration;
             }
-            if (input->_moveLeftKeyPressed) {
-                velocity->_velocity.x = -velocity->_acceleration;
+            if (p_input->m_moveLeftKeyPressed) {
+                p_velocity->m_velocity.x = -p_velocity->m_acceleration;
             }
-            if (input->_moveRightKeyPressed) {
-                velocity->_velocity.x = velocity->_acceleration;
+            if (p_input->m_moveRightKeyPressed) {
+                p_velocity->m_velocity.x = p_velocity->m_acceleration;
             }
         }
     }

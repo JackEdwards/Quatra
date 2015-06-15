@@ -2,5 +2,5 @@
 
 FaceCursorComponent::FaceCursorComponent()
 {
-    _type = ComponentType::FaceCursor;
+    m_type = ComponentType::FaceCursor;
 }

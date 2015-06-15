@@ -7,7 +7,7 @@
 class Component
 {
 public:
-    ComponentType _type;
+    ComponentType m_type;
 
 public:
     virtual ~Component() = 0;

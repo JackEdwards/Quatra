@@ -8,11 +8,12 @@
 class System
 {
 public:
-    long _lock;
+    long m_lock;
 public:
-    virtual ~System() {};
-    virtual void VUpdate(EntityPtrList entities) = 0;
+    virtual ~System() = 0;
     bool KeyFitsLock(long key);
 };
+
+inline System::~System() {};
 
 #endif

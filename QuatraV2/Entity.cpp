@@ -2,7 +2,7 @@
 
 bool Entity::HasComponent(ComponentType type)
 {
-    if (_components.count(type) > 0) {
+    if (m_components.count(type) > 0) {
         return true;
     }
     
@@ -11,22 +11,22 @@ bool Entity::HasComponent(ComponentType type)
 
 void Entity::AddComponent(ComponentPtr component)
 {
-    _components.insert(std::pair<ComponentType, ComponentPtr>(component->_type, component));
-    _types |= component->_type;
+    m_components.insert(std::pair<ComponentType, ComponentPtr>(component->m_type, component));
+    m_types |= component->m_type;
 }
 
 void Entity::RemoveComponent(ComponentType type)
 {
     if (HasComponent(type)) {
-        _components.erase(type);
-        _types ^= type;
+        m_components.erase(type);
+        m_types ^= type;
     }
 }
 
 ComponentPtr Entity::GetComponent(ComponentType type)
 {
     if (HasComponent(type)) {
-        return _components[type];
+        return m_components[type];
     }
 }
 

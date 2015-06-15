@@ -1,15 +1,17 @@
 #ifndef INPUTCOMPONENT_HPP
 #define INPUTCOMPONENT_HPP
 
+#include <map>
 #include "Component.hpp"
 
 class InputComponent : public Component
 {
 public:
-    bool _moveUpKeyPressed;
-    bool _moveDownKeyPressed;
-    bool _moveLeftKeyPressed;
-    bool _moveRightKeyPressed;
+    bool m_moveUpKeyPressed;
+    bool m_moveDownKeyPressed;
+    bool m_moveLeftKeyPressed;
+    bool m_moveRightKeyPressed;
+    bool m_fireKeyPressed;
 
 public:
     InputComponent();

@@ -9,7 +9,7 @@ class MovementSystem : public System
 {
 public:
     MovementSystem();
-    virtual void VUpdate(EntityPtrList entities);
+    void Update(EntityPtrList& entities);
 };
 
 #endif

@@ -2,8 +2,8 @@
 
 VelocityComponent::VelocityComponent(sf::Vector2f velocity, float acceleration)
 {
-    _type = ComponentType::Velocity;
+    m_type = ComponentType::Velocity;
 
-    _velocity = velocity;
-    _acceleration = acceleration;
+    m_velocity = velocity;
+    m_acceleration = acceleration;
 }

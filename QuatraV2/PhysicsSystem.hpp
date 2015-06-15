@@ -10,7 +10,7 @@ class PhysicsSystem : public System
 {
 public:
     PhysicsSystem();
-    virtual void VUpdate(EntityPtrList entities);
+    void Update(EntityPtrList& entities, float deltaTime);
 };
 
 #endif

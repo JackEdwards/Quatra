@@ -7,8 +7,8 @@
 class Entity
 {
 public:
-    std::map<ComponentType, ComponentPtr> _components;
-    long _types;
+    std::map<ComponentType, ComponentPtr> m_components;
+    long m_types;
 
 public:
     virtual ~Entity() = 0;
