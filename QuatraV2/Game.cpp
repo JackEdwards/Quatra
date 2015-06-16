@@ -22,7 +22,9 @@ void Game::Update()
     m_input.Update(m_entities);
     m_movement.Update(m_entities);
     m_faceCursor.Update(m_entities, m_window);
+    m_firing.Update(m_entities);
     m_physics.Update(m_entities, deltaTime);
+    m_destruction.Update(m_entities);
 }
 
 void Game::Render()

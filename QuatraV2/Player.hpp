@@ -6,6 +6,7 @@
 #include "VelocityComponent.hpp"
 #include "InputComponent.hpp"
 #include "FaceCursorComponent.hpp"
+#include "GunComponent.hpp"
 
 class Player : public Entity
 {

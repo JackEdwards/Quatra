@@ -11,8 +11,9 @@
 #include "MovementSystem.hpp"
 #include "FaceCursorSystem.hpp"
 #include "PhysicsSystem.hpp"
+#include "FiringSystem.hpp"
+#include "DestructionSystem.hpp"
 #include "RenderSystem.hpp"
-
 
 class Game
 {
@@ -24,8 +25,9 @@ private:
     MovementSystem m_movement;
     FaceCursorSystem m_faceCursor;
     PhysicsSystem m_physics;
+    FiringSystem m_firing;
+    DestructionSystem m_destruction;
     RenderSystem m_render;
-    
     
 public:
     Game();

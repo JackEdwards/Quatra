@@ -7,7 +7,8 @@ enum ComponentType
     Sprite     = 1 << 1,
     Input      = 1 << 2,
     FaceCursor = 1 << 3,
-    Gun        = 1 << 4
+    Gun        = 1 << 4,
+    Perishable = 1 << 5
 };
 
 #endif

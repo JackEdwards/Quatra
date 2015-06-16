@@ -27,6 +27,11 @@
 		046099491B2B133400231625 /* InputComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 046099471B2B133400231625 /* InputComponent.cpp */; };
 		04BD7A6D1B2DBF9100647C1F /* System.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04BD7A6C1B2DBF9100647C1F /* System.cpp */; };
 		04BD7A771B2DC45200647C1F /* bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 04BD7A761B2DC45200647C1F /* bullet.png */; };
+		04D7ED821B309DF5000A8A59 /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04D7ED801B309DF5000A8A59 /* Bullet.cpp */; };
+		04D7ED851B309E01000A8A59 /* GunComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04D7ED831B309E01000A8A59 /* GunComponent.cpp */; };
+		04D7ED881B309E0D000A8A59 /* FiringSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04D7ED861B309E0D000A8A59 /* FiringSystem.cpp */; };
+		04D7ED8B1B30A38C000A8A59 /* PerishableComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04D7ED891B30A38C000A8A59 /* PerishableComponent.cpp */; };
+		04D7ED8E1B30A403000A8A59 /* DestructionSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04D7ED8C1B30A403000A8A59 /* DestructionSystem.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +75,16 @@
 		04BD7A6C1B2DBF9100647C1F /* System.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = System.cpp; sourceTree = "<group>"; };
 		04BD7A761B2DC45200647C1F /* bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.png; sourceTree = "<group>"; };
 		04BD7A981B2DFFA400647C1F /* Math.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Math.hpp; sourceTree = "<group>"; };
+		04D7ED801B309DF5000A8A59 /* Bullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bullet.cpp; sourceTree = "<group>"; };
+		04D7ED811B309DF5000A8A59 /* Bullet.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Bullet.hpp; sourceTree = "<group>"; };
+		04D7ED831B309E01000A8A59 /* GunComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GunComponent.cpp; sourceTree = "<group>"; };
+		04D7ED841B309E01000A8A59 /* GunComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GunComponent.hpp; sourceTree = "<group>"; };
+		04D7ED861B309E0D000A8A59 /* FiringSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FiringSystem.cpp; sourceTree = "<group>"; };
+		04D7ED871B309E0D000A8A59 /* FiringSystem.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FiringSystem.hpp; sourceTree = "<group>"; };
+		04D7ED891B30A38C000A8A59 /* PerishableComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PerishableComponent.cpp; sourceTree = "<group>"; };
+		04D7ED8A1B30A38C000A8A59 /* PerishableComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PerishableComponent.hpp; sourceTree = "<group>"; };
+		04D7ED8C1B30A403000A8A59 /* DestructionSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DestructionSystem.cpp; sourceTree = "<group>"; };
+		04D7ED8D1B30A403000A8A59 /* DestructionSystem.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DestructionSystem.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +104,7 @@
 				0460993C1B2B0E4800231625 /* Entity.cpp */,
 				0460991A1B29C80600231625 /* Player.cpp */,
 				041FAD8E1B2C9BAB0078B837 /* Enemy.cpp */,
+				04D7ED801B309DF5000A8A59 /* Bullet.cpp */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -100,6 +116,8 @@
 				046099301B29D79F00231625 /* SpriteComponent.cpp */,
 				046099471B2B133400231625 /* InputComponent.cpp */,
 				041FAD7B1B2C6B3E0078B837 /* FaceCursorComponent.cpp */,
+				04D7ED831B309E01000A8A59 /* GunComponent.cpp */,
+				04D7ED891B30A38C000A8A59 /* PerishableComponent.cpp */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -113,6 +131,8 @@
 				0403F4801B2BAEF300BCAAC4 /* PhysicsSystem.cpp */,
 				046099441B2B120E00231625 /* RenderSystem.cpp */,
 				041FAD7E1B2C6B4C0078B837 /* FaceCursorSystem.cpp */,
+				04D7ED861B309E0D000A8A59 /* FiringSystem.cpp */,
+				04D7ED8C1B30A403000A8A59 /* DestructionSystem.cpp */,
 			);
 			name = Systems;
 			sourceTree = "<group>";
@@ -126,6 +146,8 @@
 				0403F47E1B2BAADB00BCAAC4 /* MovementSystem.hpp */,
 				0403F4811B2BAEF300BCAAC4 /* PhysicsSystem.hpp */,
 				046099451B2B120E00231625 /* RenderSystem.hpp */,
+				04D7ED871B309E0D000A8A59 /* FiringSystem.hpp */,
+				04D7ED8D1B30A403000A8A59 /* DestructionSystem.hpp */,
 			);
 			name = Systems;
 			sourceTree = "<group>";
@@ -139,6 +161,8 @@
 				0460991F1B29CAD200231625 /* VelocityComponent.hpp */,
 				0460991D1B29C8E800231625 /* SpriteComponent.hpp */,
 				046099481B2B133400231625 /* InputComponent.hpp */,
+				04D7ED841B309E01000A8A59 /* GunComponent.hpp */,
+				04D7ED8A1B30A38C000A8A59 /* PerishableComponent.hpp */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -149,6 +173,7 @@
 				046099181B29C73B00231625 /* Entity.hpp */,
 				0460991B1B29C80600231625 /* Player.hpp */,
 				041FAD8F1B2C9BAB0078B837 /* Enemy.hpp */,
+				04D7ED811B309DF5000A8A59 /* Bullet.hpp */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -172,8 +197,8 @@
 		046098FA1B29C5CD00231625 /* QuatraV2 */ = {
 			isa = PBXGroup;
 			children = (
-				046099111B29C5F700231625 /* C++ Files */,
-				046099101B29C5F100231625 /* Header Files */,
+				046099111B29C5F700231625 /* src */,
+				046099101B29C5F100231625 /* include */,
 				046098FD1B29C5CD00231625 /* ResourcePath.mm */,
 				046098FF1B29C5CD00231625 /* ResourcePath.hpp */,
 				046099021B29C5CD00231625 /* Resources */,
@@ -201,7 +226,7 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		046099101B29C5F100231625 /* Header Files */ = {
+		046099101B29C5F100231625 /* include */ = {
 			isa = PBXGroup;
 			children = (
 				046099131B29C66200231625 /* Game.hpp */,
@@ -210,10 +235,10 @@
 				0403F47A1B2B3E3200BCAAC4 /* Systems */,
 				04BD7A971B2DFF8E00647C1F /* Helpers */,
 			);
-			name = "Header Files";
+			name = include;
 			sourceTree = "<group>";
 		};
-		046099111B29C5F700231625 /* C++ Files */ = {
+		046099111B29C5F700231625 /* src */ = {
 			isa = PBXGroup;
 			children = (
 				046099001B29C5CD00231625 /* main.cpp */,
@@ -222,7 +247,7 @@
 				0403F4781B2B3E0800BCAAC4 /* Components */,
 				0403F4791B2B3E0D00BCAAC4 /* Systems */,
 			);
-			name = "C++ Files";
+			name = src;
 			sourceTree = "<group>";
 		};
 		04BD7A971B2DFF8E00647C1F /* Helpers */ = {
@@ -320,11 +345,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D7ED851B309E01000A8A59 /* GunComponent.cpp in Sources */,
 				04BD7A6D1B2DBF9100647C1F /* System.cpp in Sources */,
 				0403F47F1B2BAADB00BCAAC4 /* MovementSystem.cpp in Sources */,
 				0460993D1B2B0E4800231625 /* Entity.cpp in Sources */,
 				046099401B2B11FE00231625 /* InputSystem.cpp in Sources */,
 				041FAD801B2C6B4C0078B837 /* FaceCursorSystem.cpp in Sources */,
+				04D7ED8B1B30A38C000A8A59 /* PerishableComponent.cpp in Sources */,
 				046099351B29D7B100231625 /* VelocityComponent.cpp in Sources */,
 				046099461B2B120E00231625 /* RenderSystem.cpp in Sources */,
 				0460991C1B29C80600231625 /* Player.cpp in Sources */,
@@ -332,10 +359,13 @@
 				041FAD7D1B2C6B3E0078B837 /* FaceCursorComponent.cpp in Sources */,
 				046099311B29D79F00231625 /* SpriteComponent.cpp in Sources */,
 				046099141B29C66200231625 /* Game.cpp in Sources */,
+				04D7ED821B309DF5000A8A59 /* Bullet.cpp in Sources */,
 				046099011B29C5CD00231625 /* main.cpp in Sources */,
 				041FAD901B2C9BAB0078B837 /* Enemy.cpp in Sources */,
+				04D7ED881B309E0D000A8A59 /* FiringSystem.cpp in Sources */,
 				046099491B2B133400231625 /* InputComponent.cpp in Sources */,
 				046098FE1B29C5CD00231625 /* ResourcePath.mm in Sources */,
+				04D7ED8E1B30A403000A8A59 /* DestructionSystem.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
