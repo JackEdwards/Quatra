@@ -9,7 +9,7 @@
 class Bullet : public Entity
 {
 public:
-    Bullet(sf::Vector2f position, sf::Vector2f velocity);
+    Bullet(sf::Vector2f position, sf::Vector2f velocity, float rotation);
 };
 
 #endif

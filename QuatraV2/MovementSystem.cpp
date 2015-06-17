@@ -7,10 +7,10 @@ MovementSystem::MovementSystem()
 
 void MovementSystem::Update(EntityPtrList& entities)
 {
-    for (EntityPtr entity : entities) {
+    for (EntityPtr& entity : entities) {
         if (KeyFitsLock(entity->m_types)) {
-            VelocityComponentPtr p_velocity = std::dynamic_pointer_cast<VelocityComponent>(entity->GetComponent(ComponentType::Velocity));
-            InputComponentPtr p_input = std::dynamic_pointer_cast<InputComponent>(entity->GetComponent(ComponentType::Input));
+            VelocityComponentPtr p_velocity = std::static_pointer_cast<VelocityComponent>(entity->GetComponent(ComponentType::Velocity));
+            InputComponentPtr p_input = std::static_pointer_cast<InputComponent>(entity->GetComponent(ComponentType::Input));
 
             p_velocity->m_velocity = sf::Vector2f(0.0, 0.0);
             

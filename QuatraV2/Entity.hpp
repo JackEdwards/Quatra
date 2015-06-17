@@ -8,7 +8,8 @@ class Entity
 {
 public:
     std::map<ComponentType, ComponentPtr> m_components;
-    long m_types;
+    //long m_types;
+    std::bitset<16> m_types;
 
 public:
     virtual ~Entity() = 0;
@@ -20,7 +21,7 @@ public:
 
 inline Entity::~Entity() {};
 
-typedef std::shared_ptr<Entity> EntityPtr;
-typedef std::vector<EntityPtr> EntityPtrList;
+typedef std::unique_ptr<Entity> EntityPtr;
+typedef std::vector<std::unique_ptr<Entity>> EntityPtrList;
 
 #endif

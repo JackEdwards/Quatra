@@ -129,10 +129,10 @@
 				0460993E1B2B11FE00231625 /* InputSystem.cpp */,
 				0403F47D1B2BAADB00BCAAC4 /* MovementSystem.cpp */,
 				0403F4801B2BAEF300BCAAC4 /* PhysicsSystem.cpp */,
-				046099441B2B120E00231625 /* RenderSystem.cpp */,
 				041FAD7E1B2C6B4C0078B837 /* FaceCursorSystem.cpp */,
 				04D7ED861B309E0D000A8A59 /* FiringSystem.cpp */,
 				04D7ED8C1B30A403000A8A59 /* DestructionSystem.cpp */,
+				046099441B2B120E00231625 /* RenderSystem.cpp */,
 			);
 			name = Systems;
 			sourceTree = "<group>";
@@ -379,7 +379,7 @@
 					i386,
 					x86_64,
 				);
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				FRAMEWORK_SEARCH_PATHS = (
 					/Library/Frameworks/,
@@ -426,7 +426,7 @@
 					i386,
 					x86_64,
 				);
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				FRAMEWORK_SEARCH_PATHS = (
 					/Library/Frameworks/,

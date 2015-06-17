@@ -11,7 +11,7 @@ public:
     sf::Sprite m_sprite;
 
 public:
-    SpriteComponent(std::string fileName, sf::Vector2f position);
+    SpriteComponent(std::string fileName, sf::Vector2f position, float rotation = 0);
 };
 
 typedef std::shared_ptr<SpriteComponent> SpriteComponentPtr;

@@ -7,10 +7,10 @@ InputSystem::InputSystem()
 
 void InputSystem::Update(EntityPtrList& entities)
 {
-    for (EntityPtr entity : entities) {
+    for (EntityPtr& entity : entities) {
         if (KeyFitsLock(entity->m_types)) {
-            InputComponentPtr p_input = std::dynamic_pointer_cast<InputComponent>(entity->GetComponent(ComponentType::Input));
-            
+            InputComponentPtr p_input = std::static_pointer_cast<InputComponent>(entity->GetComponent(ComponentType::Input));
+
             p_input->m_moveUpKeyPressed    = (sf::Keyboard::isKeyPressed(sf::Keyboard::W))     ? true : false;
             p_input->m_moveDownKeyPressed  = (sf::Keyboard::isKeyPressed(sf::Keyboard::S))     ? true : false;
             p_input->m_moveLeftKeyPressed  = (sf::Keyboard::isKeyPressed(sf::Keyboard::A))     ? true : false;

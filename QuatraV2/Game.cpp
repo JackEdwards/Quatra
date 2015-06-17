@@ -3,7 +3,7 @@
 Game::Game()
 : m_window(sf::VideoMode(1280, 1280), "Quatra", sf::Style::Close)
 {
-    m_entities.push_back(std::make_shared<Player>());
+    m_entities.push_back(std::make_unique<Player>());
 }
 
 void Game::Run()
