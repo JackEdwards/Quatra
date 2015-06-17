@@ -3,6 +3,7 @@
 Game::Game()
 : m_window(sf::VideoMode(1280, 1280), "Quatra", sf::Style::Close)
 {
+    ResourceManager::LoadResources();
     m_entities.push_back(std::make_unique<Player>());
 }
 

@@ -16,12 +16,8 @@ void DestructionSystem::Update(EntityPtrList& entities)
             if (isOutOfBounds) {
                 it = entities.erase(it);
             }
-            else {
-                ++it;
-            }
+            else ++it;
         }
-        else {
-            ++it;
-        }
+        else ++it;
     }
 }

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "ResourcePath.hpp"
+#include "ResourceManager.hpp"
 #include "Entity.hpp"
 #include "Player.hpp"
 #include "Enemy.hpp"

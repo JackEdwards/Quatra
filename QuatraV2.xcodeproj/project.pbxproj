@@ -32,6 +32,7 @@
 		04D7ED881B309E0D000A8A59 /* FiringSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04D7ED861B309E0D000A8A59 /* FiringSystem.cpp */; };
 		04D7ED8B1B30A38C000A8A59 /* PerishableComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04D7ED891B30A38C000A8A59 /* PerishableComponent.cpp */; };
 		04D7ED8E1B30A403000A8A59 /* DestructionSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04D7ED8C1B30A403000A8A59 /* DestructionSystem.cpp */; };
+		04E44E861B32162B00FF03D0 /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04E44E841B32162B00FF03D0 /* ResourceManager.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,8 @@
 		04D7ED8A1B30A38C000A8A59 /* PerishableComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PerishableComponent.hpp; sourceTree = "<group>"; };
 		04D7ED8C1B30A403000A8A59 /* DestructionSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DestructionSystem.cpp; sourceTree = "<group>"; };
 		04D7ED8D1B30A403000A8A59 /* DestructionSystem.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DestructionSystem.hpp; sourceTree = "<group>"; };
+		04E44E841B32162B00FF03D0 /* ResourceManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResourceManager.cpp; sourceTree = "<group>"; };
+		04E44E851B32162B00FF03D0 /* ResourceManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ResourceManager.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				046099131B29C66200231625 /* Game.hpp */,
+				04E44E851B32162B00FF03D0 /* ResourceManager.hpp */,
 				0403F47C1B2B3E3A00BCAAC4 /* Entities */,
 				0403F47B1B2B3E3600BCAAC4 /* Components */,
 				0403F47A1B2B3E3200BCAAC4 /* Systems */,
@@ -243,6 +247,7 @@
 			children = (
 				046099001B29C5CD00231625 /* main.cpp */,
 				046099121B29C66200231625 /* Game.cpp */,
+				04E44E841B32162B00FF03D0 /* ResourceManager.cpp */,
 				0403F4771B2B3E0000BCAAC4 /* Entities */,
 				0403F4781B2B3E0800BCAAC4 /* Components */,
 				0403F4791B2B3E0D00BCAAC4 /* Systems */,
@@ -350,6 +355,7 @@
 				0403F47F1B2BAADB00BCAAC4 /* MovementSystem.cpp in Sources */,
 				0460993D1B2B0E4800231625 /* Entity.cpp in Sources */,
 				046099401B2B11FE00231625 /* InputSystem.cpp in Sources */,
+				04E44E861B32162B00FF03D0 /* ResourceManager.cpp in Sources */,
 				041FAD801B2C6B4C0078B837 /* FaceCursorSystem.cpp in Sources */,
 				04D7ED8B1B30A38C000A8A59 /* PerishableComponent.cpp in Sources */,
 				046099351B29D7B100231625 /* VelocityComponent.cpp in Sources */,

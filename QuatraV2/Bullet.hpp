@@ -1,6 +1,7 @@
 #ifndef BULLET_HPP
 #define BULLET_HPP
 
+#include "ResourceManager.hpp"
 #include "Entity.hpp"
 #include "SpriteComponent.hpp"
 #include "VelocityComponent.hpp"

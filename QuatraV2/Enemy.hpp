@@ -1,6 +1,7 @@
 #ifndef ENEMY_HPP
 #define ENEMY_HPP
 
+#include "ResourceManager.hpp"
 #include "Entity.hpp"
 #include "SpriteComponent.hpp"
 #include "VelocityComponent.hpp"
