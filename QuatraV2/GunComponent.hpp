@@ -6,7 +6,11 @@
 class GunComponent : public Component
 {
 public:
-    GunComponent();
+    sf::Clock m_reloadClock;
+    float m_reloadLimit;
+
+public:
+    GunComponent(float reloadLimit);
 };
 
 typedef std::shared_ptr<GunComponent> GunComponentPtr;

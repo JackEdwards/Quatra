@@ -7,11 +7,13 @@ RenderSystem::RenderSystem()
 
 void RenderSystem::Update(EntityPtrList& entities, sf::RenderWindow& window)
 {
-    for (EntityPtr& entity : entities) {
-        if (KeyFitsLock(entity->m_types)) {
-            SpriteComponentPtr p_sprite = std::static_pointer_cast<SpriteComponent>(entity->GetComponent(ComponentType::Sprite));
+    for (EntityPtr& p_entity : entities) {
+        if (KeyFitsLock(p_entity->m_types)) {
+            SpriteComponentPtr p_spriteComp = std::static_pointer_cast<SpriteComponent>(p_entity->GetComponent(ComponentType::Sprite));
 
-            window.draw(p_sprite->m_sprite);
+            window.draw(p_spriteComp->m_sprite);
         }
     }
+    
+    
 }

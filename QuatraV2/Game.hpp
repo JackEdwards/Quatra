@@ -1,26 +1,28 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 
-#include <iostream>
 #include <SFML/Graphics.hpp>
 #include "ResourcePath.hpp"
 #include "ResourceManager.hpp"
 #include "Entity.hpp"
 #include "Player.hpp"
 #include "Enemy.hpp"
+#include "Tile.hpp"
 #include "InputSystem.hpp"
 #include "MovementSystem.hpp"
 #include "FaceCursorSystem.hpp"
 #include "PhysicsSystem.hpp"
 #include "FiringSystem.hpp"
 #include "DestructionSystem.hpp"
+#include "CollisionSystem.hpp"
 #include "RenderSystem.hpp"
 
 class Game
 {
 private:
     sf::RenderWindow m_window;
-    sf::Clock m_clock;
+    sf::Clock m_gameClock;
+    sf::Clock m_deltaClock;
     EntityPtrList m_entities;
     InputSystem m_input;
     MovementSystem m_movement;
@@ -28,6 +30,7 @@ private:
     PhysicsSystem m_physics;
     FiringSystem m_firing;
     DestructionSystem m_destruction;
+    CollisionSystem m_collision;
     RenderSystem m_render;
     
 public:
@@ -37,6 +40,7 @@ private:
     void Update();
     void Render();
     void HandleEvents();
+    void LoadMap();
 };
 
 #endif

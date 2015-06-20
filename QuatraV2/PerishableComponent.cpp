@@ -1,8 +1,8 @@
 #include "PerishableComponent.hpp"
 
-PerishableComponent::PerishableComponent()
+PerishableComponent::PerishableComponent(PerishCondition perishCondition)
 {
     m_type = ComponentType::Perishable;
     
-    m_shouldPerish = false;
+    m_perishCondition = perishCondition;
 }

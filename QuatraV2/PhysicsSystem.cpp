@@ -7,12 +7,12 @@ PhysicsSystem::PhysicsSystem()
 
 void PhysicsSystem::Update(EntityPtrList& entities, float dt)
 {
-    for (EntityPtr& entity : entities) {
-        if (KeyFitsLock(entity->m_types)) {
-            VelocityComponentPtr p_velocity = std::static_pointer_cast<VelocityComponent>(entity->GetComponent(ComponentType::Velocity));
-            SpriteComponentPtr p_sprite = std::static_pointer_cast<SpriteComponent>(entity->GetComponent(ComponentType::Sprite));
+    for (EntityPtr& p_entity : entities) {
+        if (KeyFitsLock(p_entity->m_types)) {
+            VelocityComponentPtr p_velocityComp = std::static_pointer_cast<VelocityComponent>(p_entity->GetComponent(ComponentType::Velocity));
+            SpriteComponentPtr p_spriteComp = std::static_pointer_cast<SpriteComponent>(p_entity->GetComponent(ComponentType::Sprite));
 
-            p_sprite->m_sprite.move(p_velocity->m_velocity * dt);
+            p_spriteComp->m_sprite.move(((p_velocityComp->m_velocity * dt) * p_velocityComp->m_speed));
         }
     }
 }

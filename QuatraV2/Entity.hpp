@@ -8,7 +8,6 @@ class Entity
 {
 public:
     std::map<ComponentType, ComponentPtr> m_components;
-    //long m_types;
     std::bitset<16> m_types;
 
 public:

@@ -3,12 +3,18 @@
 
 #include "Component.hpp"
 
+enum PerishCondition
+{
+    OutOfBounds,
+    NoHealth
+};
+
 class PerishableComponent : public Component
 {
 public:
-    bool m_shouldPerish;
+    PerishCondition m_perishCondition;
 public:
-    PerishableComponent();
+    PerishableComponent(PerishCondition perishCondition);
 };
 
 typedef std::shared_ptr<PerishableComponent> PerishableComponentPtr;

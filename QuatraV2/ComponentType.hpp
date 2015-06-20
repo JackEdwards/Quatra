@@ -8,7 +8,8 @@ enum ComponentType
     Input      = 1 << 2,
     FaceCursor = 1 << 3,
     Gun        = 1 << 4,
-    Perishable = 1 << 5
+    Perishable = 1 << 5,
+    Solid      = 1 << 6
 };
 
 #endif

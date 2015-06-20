@@ -9,7 +9,6 @@
 class System
 {
 public:
-    //long m_lock;
     std::bitset<16> m_lock;
 public:
     virtual ~System() = 0;

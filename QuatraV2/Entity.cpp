@@ -29,4 +29,3 @@ ComponentPtr Entity::GetComponent(ComponentType type)
         return m_components[type];
     }
 }
-

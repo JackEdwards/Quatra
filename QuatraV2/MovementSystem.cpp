@@ -7,24 +7,24 @@ MovementSystem::MovementSystem()
 
 void MovementSystem::Update(EntityPtrList& entities)
 {
-    for (EntityPtr& entity : entities) {
-        if (KeyFitsLock(entity->m_types)) {
-            VelocityComponentPtr p_velocity = std::static_pointer_cast<VelocityComponent>(entity->GetComponent(ComponentType::Velocity));
-            InputComponentPtr p_input = std::static_pointer_cast<InputComponent>(entity->GetComponent(ComponentType::Input));
+    for (EntityPtr& p_entity : entities) {
+        if (KeyFitsLock(p_entity->m_types)) {
+            VelocityComponentPtr p_velocityComp = std::static_pointer_cast<VelocityComponent>(p_entity->GetComponent(ComponentType::Velocity));
+            InputComponentPtr p_inputComp = std::static_pointer_cast<InputComponent>(p_entity->GetComponent(ComponentType::Input));
 
-            p_velocity->m_velocity = sf::Vector2f(0.0, 0.0);
+            p_velocityComp->m_velocity = sf::Vector2f(0.0, 0.0);
             
-            if (p_input->m_moveUpKeyPressed) {
-                p_velocity->m_velocity.y = -p_velocity->m_acceleration;
+            if (p_inputComp->m_moveUpKeyPressed) {
+                p_velocityComp->m_velocity.y = -1.0f;
             }
-            if (p_input->m_moveDownKeyPressed) {
-                p_velocity->m_velocity.y = p_velocity->m_acceleration;
+            if (p_inputComp->m_moveDownKeyPressed) {
+                p_velocityComp->m_velocity.y = 1.0f;
             }
-            if (p_input->m_moveLeftKeyPressed) {
-                p_velocity->m_velocity.x = -p_velocity->m_acceleration;
+            if (p_inputComp->m_moveLeftKeyPressed) {
+                p_velocityComp->m_velocity.x = -1.0f;
             }
-            if (p_input->m_moveRightKeyPressed) {
-                p_velocity->m_velocity.x = p_velocity->m_acceleration;
+            if (p_inputComp->m_moveRightKeyPressed) {
+                p_velocityComp->m_velocity.x = 1.0f;
             }
         }
     }

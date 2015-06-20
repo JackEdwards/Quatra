@@ -5,13 +5,14 @@
 #include "System.hpp"
 #include "InputComponent.hpp"
 #include "SpriteComponent.hpp"
+#include "GunComponent.hpp"
 #include "Bullet.hpp"
 
 class FiringSystem : public System
 {
 public:
     FiringSystem();
-    void Update(EntityPtrList& entities);
+    void Update(EntityPtrList& entities, sf::Time time);
 };
 
 #endif

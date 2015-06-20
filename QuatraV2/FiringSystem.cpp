@@ -5,28 +5,28 @@ FiringSystem::FiringSystem()
     m_lock = ComponentType::Gun | ComponentType::Input | ComponentType::Sprite;
 }
 
-void FiringSystem::Update(EntityPtrList& entities)
+void FiringSystem::Update(EntityPtrList& entities, sf::Time time)
 {
-    EntityPtrList entityQueue;
+    std::unique_ptr<Bullet> newBullet = nullptr;
 
-    for (EntityPtr& entity : entities) {
-        if (KeyFitsLock(entity->m_types)) {
-            InputComponentPtr p_input = std::static_pointer_cast<InputComponent>(entity->GetComponent(ComponentType::Input));
-            SpriteComponentPtr p_sprite = std::static_pointer_cast<SpriteComponent>(entity->GetComponent(ComponentType::Sprite));
+    for (EntityPtr& p_entity : entities) {
+        if (KeyFitsLock(p_entity->m_types)) {
+            InputComponentPtr p_inputComp = std::static_pointer_cast<InputComponent>(p_entity->GetComponent(ComponentType::Input));
+            SpriteComponentPtr p_spriteComp = std::static_pointer_cast<SpriteComponent>(p_entity->GetComponent(ComponentType::Sprite));
+            GunComponentPtr p_gunComp = std::static_pointer_cast<GunComponent>(p_entity->GetComponent(ComponentType::Gun));
             
-            if (p_input->m_fireKeyPressed) {
-                sf::Vector2f position = p_sprite->m_sprite.getPosition();
-                float rotation = p_sprite->m_sprite.getRotation();
+            if (p_inputComp->m_fireKeyPressed && p_gunComp->m_reloadClock.getElapsedTime().asSeconds() >= p_gunComp->m_reloadLimit) {
+                sf::Vector2f position = p_spriteComp->m_sprite.getPosition();
+                float rotation = p_spriteComp->m_sprite.getRotation();
                 sf::Vector2f velocity = DegreesToVector2f(rotation - 90);
 
-                entityQueue.push_back(std::make_unique<Bullet>(position, velocity * 1.0f, rotation));
+                newBullet = std::make_unique<Bullet>(position, velocity, rotation);
+                p_gunComp->m_reloadClock.restart();
             }
         }
     }
     
-    entities.insert(
-        entities.end(),
-        std::make_move_iterator(entityQueue.begin()),
-        std::make_move_iterator(entityQueue.end())
-    );
+    if (newBullet != nullptr) {
+        entities.push_back(std::move(newBullet));
+    }
 }
