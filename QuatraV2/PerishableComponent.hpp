@@ -12,9 +12,12 @@ enum PerishCondition
 class PerishableComponent : public Component
 {
 public:
+    ComponentType m_type;
     PerishCondition m_perishCondition;
+
 public:
-    PerishableComponent(PerishCondition perishCondition);
+    PerishableComponent();
+    void Init(PerishCondition perishCondition);
 };
 
 typedef std::shared_ptr<PerishableComponent> PerishableComponentPtr;

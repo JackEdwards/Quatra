@@ -33,6 +33,10 @@ private:
     CollisionSystem m_collision;
     RenderSystem m_render;
     
+    sf::Font m_font;
+    sf::Text m_text;
+    int m_fps;
+    
 public:
     Game();
     void Run();

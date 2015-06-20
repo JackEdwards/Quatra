@@ -9,7 +9,7 @@ void FaceCursorSystem::Update(EntityPtrList& entities, sf::RenderWindow& window)
 {
     for (EntityPtr& p_entity : entities) {
         if (KeyFitsLock(p_entity->m_types)) {
-            SpriteComponentPtr p_spriteComp = std::static_pointer_cast<SpriteComponent>(p_entity->GetComponent(ComponentType::Sprite));
+            SpriteComponentPtr p_spriteComp = p_entity->GetComponent<SpriteComponent>();
             
             // Get distance between sprite and mouses
             int x = p_spriteComp->m_sprite.getPosition().x - sf::Mouse::getPosition(window).x;

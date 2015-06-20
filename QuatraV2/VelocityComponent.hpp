@@ -6,11 +6,13 @@
 class VelocityComponent : public Component
 {
 public:
+    ComponentType m_type;
     sf::Vector2f m_velocity;
     float m_speed;
 
 public:
-    VelocityComponent(sf::Vector2f velocity, float speed);
+    VelocityComponent();
+    void Init(sf::Vector2f velocity, float speed);
 };
 
 typedef std::shared_ptr<VelocityComponent> VelocityComponentPtr;

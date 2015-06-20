@@ -1,8 +1,11 @@
 #include "GunComponent.hpp"
 
-GunComponent::GunComponent(float reloadLimit)
+GunComponent::GunComponent()
 {
     m_type = ComponentType::Gun;
-    
+}
+
+void GunComponent::Init(float reloadLimit)
+{
     m_reloadLimit = reloadLimit;
 }

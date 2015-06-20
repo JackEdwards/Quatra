@@ -9,8 +9,8 @@ void MovementSystem::Update(EntityPtrList& entities)
 {
     for (EntityPtr& p_entity : entities) {
         if (KeyFitsLock(p_entity->m_types)) {
-            VelocityComponentPtr p_velocityComp = std::static_pointer_cast<VelocityComponent>(p_entity->GetComponent(ComponentType::Velocity));
-            InputComponentPtr p_inputComp = std::static_pointer_cast<InputComponent>(p_entity->GetComponent(ComponentType::Input));
+            VelocityComponentPtr p_velocityComp = p_entity->GetComponent<VelocityComponent>();
+            InputComponentPtr p_inputComp = p_entity->GetComponent<InputComponent>();
 
             p_velocityComp->m_velocity = sf::Vector2f(0.0, 0.0);
             

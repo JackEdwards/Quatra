@@ -9,8 +9,8 @@ void DestructionSystem::Update(EntityPtrList& entities)
 {
     for (auto it = entities.begin(); it != entities.end();) {
         if (KeyFitsLock((*it)->m_types)) {
-            SpriteComponentPtr p_spriteComp = std::static_pointer_cast<SpriteComponent>((*it)->GetComponent(ComponentType::Sprite));
-            PerishableComponentPtr p_perishableComp = std::static_pointer_cast<PerishableComponent>((*it)->GetComponent(ComponentType::Perishable));
+            SpriteComponentPtr p_spriteComp = (*it)->GetComponent<SpriteComponent>();
+            PerishableComponentPtr p_perishableComp = (*it)->GetComponent<PerishableComponent>();
             sf::Vector2f position = p_spriteComp->m_sprite.getPosition();
             bool shouldPerish = false;
             

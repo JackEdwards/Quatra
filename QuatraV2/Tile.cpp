@@ -2,5 +2,6 @@
 
 Tile::Tile(sf::Texture& texture, sf::Vector2f position)
 {
-    AddComponent(std::make_shared<SpriteComponent>(texture, position));
+    AddComponent<SpriteComponent>();
+    GetComponent<SpriteComponent>()->Init(texture, position);
 }

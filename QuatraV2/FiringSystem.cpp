@@ -11,9 +11,9 @@ void FiringSystem::Update(EntityPtrList& entities, sf::Time time)
 
     for (EntityPtr& p_entity : entities) {
         if (KeyFitsLock(p_entity->m_types)) {
-            InputComponentPtr p_inputComp = std::static_pointer_cast<InputComponent>(p_entity->GetComponent(ComponentType::Input));
-            SpriteComponentPtr p_spriteComp = std::static_pointer_cast<SpriteComponent>(p_entity->GetComponent(ComponentType::Sprite));
-            GunComponentPtr p_gunComp = std::static_pointer_cast<GunComponent>(p_entity->GetComponent(ComponentType::Gun));
+            InputComponentPtr p_inputComp = p_entity->GetComponent<InputComponent>();
+            SpriteComponentPtr p_spriteComp = p_entity->GetComponent<SpriteComponent>();
+            GunComponentPtr p_gunComp = p_entity->GetComponent<GunComponent>();
             
             if (p_inputComp->m_fireKeyPressed && p_gunComp->m_reloadClock.getElapsedTime().asSeconds() >= p_gunComp->m_reloadLimit) {
                 sf::Vector2f position = p_spriteComp->m_sprite.getPosition();

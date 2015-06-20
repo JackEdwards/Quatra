@@ -8,13 +8,30 @@ Game::Game()
     m_entities.push_back(std::make_unique<Player>());
     m_entities.push_back(std::make_unique<Enemy>(sf::Vector2f(500, 500)));
     m_window.setVerticalSyncEnabled(true);
+    
+    m_font.loadFromFile(resourcePath() + "sansation.ttf");
+    m_text.setFont(m_font);
+    m_text.setString("FPS:");
+    m_text.setColor(sf::Color::Red);
+    m_text.setPosition(20, 20);
+    m_fps = 0.0f;
 }
 
 void Game::Run()
 {
+    sf::Clock clock;
+    float lastTime = 0.0f;
+
     while (m_window.isOpen()) {
         Update();
         Render();
+        
+        float currentTime = clock.restart().asSeconds();
+        m_fps = 1.0f / currentTime;
+        if (currentTime != lastTime) {
+            m_text.setString("FPS: " + std::to_string(m_fps));
+        }
+        lastTime = currentTime;
     }
 }
 
@@ -37,6 +54,7 @@ void Game::Render()
     m_window.clear(sf::Color::White);
 
     m_render.Update(m_entities, m_window);
+    m_window.draw(m_text);
 
     m_window.display();
 }
