@@ -1,6 +1,8 @@
 template <class T>
 bool Entity::HasComponent()
 {
+    static_assert(std::is_base_of<Component, T>::value, "T must extend Component");
+
     if (m_components.count(typeid(T)) > 0) {
         return true;
     }
@@ -31,6 +33,8 @@ void Entity::AddComponent()
 template <class T>
 void Entity::RemoveComponent()
 {
+    static_assert(std::is_base_of<Component, T>::value, "T must extend Component");
+
     if (HasComponent<T>()) {
         std::shared_ptr<T> component = GetComponent<T>();
         m_types ^= component->m_type;

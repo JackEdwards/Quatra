@@ -1,6 +1,7 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 
+#include <iostream>
 #include <SFML/Graphics.hpp>
 #include "ResourcePath.hpp"
 #include "ResourceManager.hpp"

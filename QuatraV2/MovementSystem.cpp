@@ -9,22 +9,26 @@ void MovementSystem::Update(EntityPtrList& entities)
 {
     for (EntityPtr& p_entity : entities) {
         if (KeyFitsLock(p_entity->m_types)) {
-            VelocityComponentPtr p_velocityComp = p_entity->GetComponent<VelocityComponent>();
-            InputComponentPtr p_inputComp = p_entity->GetComponent<InputComponent>();
+            VelocityComponentPtr p_velocity = p_entity->GetComponent<VelocityComponent>();
+            InputComponentPtr p_input = p_entity->GetComponent<InputComponent>();
 
-            p_velocityComp->m_velocity = sf::Vector2f(0.0, 0.0);
+            p_velocity->m_velocity = sf::Vector2f(0.0, 0.0);
             
-            if (p_inputComp->m_moveUpKeyPressed) {
-                p_velocityComp->m_velocity.y = -1.0f;
+            if (p_input->m_moveUpKeyPressed) {
+                p_velocity->m_velocity.y = -1.0f;
+                p_velocity->m_velocity = Normalize(p_velocity->m_velocity);
             }
-            if (p_inputComp->m_moveDownKeyPressed) {
-                p_velocityComp->m_velocity.y = 1.0f;
+            if (p_input->m_moveDownKeyPressed) {
+                p_velocity->m_velocity.y = 1.0f;
+                p_velocity->m_velocity = Normalize(p_velocity->m_velocity);
             }
-            if (p_inputComp->m_moveLeftKeyPressed) {
-                p_velocityComp->m_velocity.x = -1.0f;
+            if (p_input->m_moveLeftKeyPressed) {
+                p_velocity->m_velocity.x = -1.0f;
+                p_velocity->m_velocity = Normalize(p_velocity->m_velocity);
             }
-            if (p_inputComp->m_moveRightKeyPressed) {
-                p_velocityComp->m_velocity.x = 1.0f;
+            if (p_input->m_moveRightKeyPressed) {
+                p_velocity->m_velocity.x = 1.0f;
+                p_velocity->m_velocity = Normalize(p_velocity->m_velocity);
             }
         }
     }

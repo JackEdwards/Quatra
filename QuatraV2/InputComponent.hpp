@@ -7,8 +7,6 @@
 class InputComponent : public Component
 {
 public:
-    ComponentType m_type;
-
     bool m_moveUpKeyPressed;
     bool m_moveDownKeyPressed;
     bool m_moveLeftKeyPressed;

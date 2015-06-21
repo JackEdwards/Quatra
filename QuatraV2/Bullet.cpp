@@ -6,8 +6,8 @@ Bullet::Bullet(sf::Vector2f position, sf::Vector2f velocity, float rotation)
     AddComponent<VelocityComponent>();
     AddComponent<PerishableComponent>();
     
-    GetComponent<SpriteComponent>()->Init(ResourceManager::m_bulletTexture, position, rotation);
-    GetComponent<VelocityComponent>()->Init(velocity, 3.0f);
+    GetComponent<SpriteComponent>()->Init(ResourceManager::m_bulletTexture, position, 1, rotation);
+    GetComponent<VelocityComponent>()->Init(velocity, 5.0f);
     GetComponent<PerishableComponent>()->Init(PerishCondition::OutOfBounds);
     
     SpriteComponentPtr p_spriteComp = GetComponent<SpriteComponent>();

@@ -6,7 +6,6 @@
 class GunComponent : public Component
 {
 public:
-    ComponentType m_type;
     sf::Clock m_reloadClock;
     float m_reloadLimit;
 

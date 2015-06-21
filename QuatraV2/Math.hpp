@@ -34,4 +34,9 @@ inline float Vector2fToDegrees(sf::Vector2f vector2)
     return RadiansToDegrees(atan2f(vector2.y, vector2.x));
 }
 
+inline sf::Vector2f Normalize(sf::Vector2f v)
+{
+    return v /= sqrtf((v.x * v.x) + (v.y * v.y));
+}
+
 #endif

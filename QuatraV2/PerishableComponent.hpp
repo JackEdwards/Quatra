@@ -12,7 +12,6 @@ enum PerishCondition
 class PerishableComponent : public Component
 {
 public:
-    ComponentType m_type;
     PerishCondition m_perishCondition;
 
 public:

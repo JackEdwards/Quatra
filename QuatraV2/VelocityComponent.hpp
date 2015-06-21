@@ -6,7 +6,6 @@
 class VelocityComponent : public Component
 {
 public:
-    ComponentType m_type;
     sf::Vector2f m_velocity;
     float m_speed;
 

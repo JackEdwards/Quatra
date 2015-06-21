@@ -9,10 +9,10 @@ void PhysicsSystem::Update(EntityPtrList& entities, float dt)
 {
     for (EntityPtr& p_entity : entities) {
         if (KeyFitsLock(p_entity->m_types)) {
-            VelocityComponentPtr p_velocityComp = p_entity->GetComponent<VelocityComponent>();
-            SpriteComponentPtr p_spriteComp = p_entity->GetComponent<SpriteComponent>();
+            VelocityComponentPtr p_velocity = p_entity->GetComponent<VelocityComponent>();
+            SpriteComponentPtr p_sprite = p_entity->GetComponent<SpriteComponent>();
 
-            p_spriteComp->m_sprite.move((p_velocityComp->m_velocity * dt) * p_velocityComp->m_speed);
+            p_sprite->m_sprite.move((p_velocity->m_velocity * dt) * p_velocity->m_speed);
         }
     }
 }

@@ -6,9 +6,6 @@
 class FaceCursorComponent : public Component
 {
 public:
-    ComponentType m_type;
-
-public:
     FaceCursorComponent();
     void Init();
 };
