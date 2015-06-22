@@ -9,7 +9,7 @@ enum ComponentType
     FaceCursor = 1 << 3,
     Gun        = 1 << 4,
     Perishable = 1 << 5,
-    Solid      = 1 << 6
+    RigidBody  = 1 << 6
 };
 
 #endif

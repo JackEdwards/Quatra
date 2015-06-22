@@ -25,7 +25,6 @@
 		046099461B2B120E00231625 /* RenderSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 046099441B2B120E00231625 /* RenderSystem.cpp */; };
 		046099491B2B133400231625 /* InputComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 046099471B2B133400231625 /* InputComponent.cpp */; };
 		04638CF01B3619620032FB8C /* Entity.tpp in Resources */ = {isa = PBXBuildFile; fileRef = 04638CEF1B3619620032FB8C /* Entity.tpp */; };
-		04638CF31B362AAD0032FB8C /* SolidComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04638CF11B362AAD0032FB8C /* SolidComponent.cpp */; };
 		04BD7A6D1B2DBF9100647C1F /* System.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04BD7A6C1B2DBF9100647C1F /* System.cpp */; };
 		04BD7A771B2DC45200647C1F /* bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 04BD7A761B2DC45200647C1F /* bullet.png */; };
 		04D7ED821B309DF5000A8A59 /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04D7ED801B309DF5000A8A59 /* Bullet.cpp */; };
@@ -36,6 +35,9 @@
 		04DFA89B1B3360EB008681DD /* spritesheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DFA89A1B3360EB008681DD /* spritesheet.png */; };
 		04DFA89E1B33642B008681DD /* Tile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DFA89C1B33642B008681DD /* Tile.cpp */; };
 		04E44E861B32162B00FF03D0 /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04E44E841B32162B00FF03D0 /* ResourceManager.cpp */; };
+		04F014131B37B010005BE91B /* RigidBodyComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F014111B37B010005BE91B /* RigidBodyComponent.cpp */; };
+		04F014161B37B110005BE91B /* Settings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F014141B37B110005BE91B /* Settings.cpp */; };
+		04F014411B37BACE005BE91B /* settings.json in Resources */ = {isa = PBXBuildFile; fileRef = 04F014401B37BACE005BE91B /* settings.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,8 +79,6 @@
 		046099471B2B133400231625 /* InputComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InputComponent.cpp; sourceTree = "<group>"; };
 		046099481B2B133400231625 /* InputComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = InputComponent.hpp; sourceTree = "<group>"; };
 		04638CEF1B3619620032FB8C /* Entity.tpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Entity.tpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
-		04638CF11B362AAD0032FB8C /* SolidComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SolidComponent.cpp; sourceTree = "<group>"; };
-		04638CF21B362AAD0032FB8C /* SolidComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SolidComponent.hpp; sourceTree = "<group>"; };
 		04BD7A6C1B2DBF9100647C1F /* System.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = System.cpp; sourceTree = "<group>"; };
 		04BD7A761B2DC45200647C1F /* bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.png; sourceTree = "<group>"; };
 		04BD7A981B2DFFA400647C1F /* Math.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Math.hpp; sourceTree = "<group>"; };
@@ -97,6 +97,11 @@
 		04DFA89D1B33642B008681DD /* Tile.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Tile.hpp; sourceTree = "<group>"; };
 		04E44E841B32162B00FF03D0 /* ResourceManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResourceManager.cpp; sourceTree = "<group>"; };
 		04E44E851B32162B00FF03D0 /* ResourceManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ResourceManager.hpp; sourceTree = "<group>"; };
+		04F014111B37B010005BE91B /* RigidBodyComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RigidBodyComponent.cpp; sourceTree = "<group>"; };
+		04F014121B37B010005BE91B /* RigidBodyComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RigidBodyComponent.hpp; sourceTree = "<group>"; };
+		04F014141B37B110005BE91B /* Settings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Settings.cpp; sourceTree = "<group>"; };
+		04F014151B37B110005BE91B /* Settings.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Settings.hpp; sourceTree = "<group>"; };
+		04F014401B37BACE005BE91B /* settings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = settings.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +137,7 @@
 				041FAD7B1B2C6B3E0078B837 /* FaceCursorComponent.cpp */,
 				04D7ED831B309E01000A8A59 /* GunComponent.cpp */,
 				04D7ED891B30A38C000A8A59 /* PerishableComponent.cpp */,
-				04638CF11B362AAD0032FB8C /* SolidComponent.cpp */,
+				04F014111B37B010005BE91B /* RigidBodyComponent.cpp */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -180,7 +185,7 @@
 				046099481B2B133400231625 /* InputComponent.hpp */,
 				04D7ED841B309E01000A8A59 /* GunComponent.hpp */,
 				04D7ED8A1B30A38C000A8A59 /* PerishableComponent.hpp */,
-				04638CF21B362AAD0032FB8C /* SolidComponent.hpp */,
+				04F014121B37B010005BE91B /* RigidBodyComponent.hpp */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 			children = (
 				046099111B29C5F700231625 /* src */,
 				046099101B29C5F100231625 /* include */,
+				04F014171B37B216005BE91B /* lib */,
 				046098FD1B29C5CD00231625 /* ResourcePath.mm */,
 				046098FF1B29C5CD00231625 /* ResourcePath.hpp */,
 				046099021B29C5CD00231625 /* Resources */,
@@ -240,6 +246,7 @@
 				04DFA89A1B3360EB008681DD /* spritesheet.png */,
 				046099071B29C5CE00231625 /* sansation.ttf */,
 				04BD7A761B2DC45200647C1F /* bullet.png */,
+				04F014401B37BACE005BE91B /* settings.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -249,6 +256,7 @@
 			children = (
 				046099131B29C66200231625 /* Game.hpp */,
 				04E44E851B32162B00FF03D0 /* ResourceManager.hpp */,
+				04F014151B37B110005BE91B /* Settings.hpp */,
 				0403F47C1B2B3E3A00BCAAC4 /* Entities */,
 				0403F47B1B2B3E3600BCAAC4 /* Components */,
 				0403F47A1B2B3E3200BCAAC4 /* Systems */,
@@ -263,6 +271,7 @@
 				046099001B29C5CD00231625 /* main.cpp */,
 				046099121B29C66200231625 /* Game.cpp */,
 				04E44E841B32162B00FF03D0 /* ResourceManager.cpp */,
+				04F014141B37B110005BE91B /* Settings.cpp */,
 				0403F4771B2B3E0000BCAAC4 /* Entities */,
 				0403F4781B2B3E0800BCAAC4 /* Components */,
 				0403F4791B2B3E0D00BCAAC4 /* Systems */,
@@ -276,6 +285,13 @@
 				04BD7A981B2DFFA400647C1F /* Math.hpp */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		04F014171B37B216005BE91B /* lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +354,7 @@
 				04BD7A771B2DC45200647C1F /* bullet.png in Resources */,
 				04638CF01B3619620032FB8C /* Entity.tpp in Resources */,
 				046099081B29C5CE00231625 /* sansation.ttf in Resources */,
+				04F014411B37BACE005BE91B /* settings.json in Resources */,
 				04DFA89B1B3360EB008681DD /* spritesheet.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,10 +398,11 @@
 				046099311B29D79F00231625 /* SpriteComponent.cpp in Sources */,
 				046099141B29C66200231625 /* Game.cpp in Sources */,
 				04D7ED821B309DF5000A8A59 /* Bullet.cpp in Sources */,
-				04638CF31B362AAD0032FB8C /* SolidComponent.cpp in Sources */,
+				04F014131B37B010005BE91B /* RigidBodyComponent.cpp in Sources */,
 				046099011B29C5CD00231625 /* main.cpp in Sources */,
 				041FAD901B2C9BAB0078B837 /* Enemy.cpp in Sources */,
 				04D7ED881B309E0D000A8A59 /* FiringSystem.cpp in Sources */,
+				04F014161B37B110005BE91B /* Settings.cpp in Sources */,
 				046099491B2B133400231625 /* InputComponent.cpp in Sources */,
 				04DFA89E1B33642B008681DD /* Tile.cpp in Sources */,
 				042ACC231B3491F700605F96 /* CollisionSystem.cpp in Sources */,

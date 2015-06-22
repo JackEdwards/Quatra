@@ -4,11 +4,6 @@ sf::Texture ResourceManager::m_bulletTexture;
 std::vector<sf::Texture> ResourceManager::m_textures(7);
 sf::Texture ResourceManager::m_spriteSheet;
 
-ResourceManager::ResourceManager()
-{
-    
-}
-
 void ResourceManager::LoadResources()
 {
     ResourceManager::m_spriteSheet.loadFromFile(resourcePath() + "spritesheet.png");

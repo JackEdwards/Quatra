@@ -4,7 +4,6 @@
 #include "ResourceManager.hpp"
 #include "Entity.hpp"
 #include "SpriteComponent.hpp"
-#include "SolidComponent.hpp"
 
 class Tile : public Entity
 {

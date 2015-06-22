@@ -1,8 +1,9 @@
 #include "Game.hpp"
 
 Game::Game()
-: m_window(sf::VideoMode(1920, 1200), "Quatra", sf::Style::Close)
+: m_window(sf::VideoMode(Settings::WindowWidth, Settings::WindowHeight), "Quatra", sf::Style::Close)
 {
+    std::cout << m_window.getSize().x << ", " << m_window.getSize().y << std::endl;
     ResourceManager::LoadResources();
     m_entities.push_back(std::make_unique<Player>());
     m_entities.push_back(std::make_unique<Enemy>(sf::Vector2f(500, 500)));

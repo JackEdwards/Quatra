@@ -15,8 +15,10 @@ private:
     static const int TILE_HEIGHT = 80;
 
 public:
-    ResourceManager();
+    virtual ~ResourceManager() = 0;
     static void LoadResources();
 };
+
+inline ResourceManager::~ResourceManager() {};
 
 #endif

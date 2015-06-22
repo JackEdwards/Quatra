@@ -11,8 +11,11 @@ void PhysicsSystem::Update(EntityPtrList& entities, float dt)
         if (KeyFitsLock(p_entity->m_types)) {
             VelocityComponentPtr p_velocity = p_entity->GetComponent<VelocityComponent>();
             SpriteComponentPtr p_sprite = p_entity->GetComponent<SpriteComponent>();
+            sf::Sprite& r_sprite = p_sprite->m_sprite;
+            sf::Vector2f velocity = p_velocity->m_velocity;
+            float speed = p_velocity->m_speed;
 
-            p_sprite->m_sprite.move((p_velocity->m_velocity * dt) * p_velocity->m_speed);
+            r_sprite.move((velocity * dt) * speed);
         }
     }
 }

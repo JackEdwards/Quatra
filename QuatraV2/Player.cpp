@@ -8,8 +8,8 @@ Player::Player()
     AddComponent<FaceCursorComponent>();
     AddComponent<GunComponent>();
 
-    GetComponent<SpriteComponent>()->Init(ResourceManager::m_textures[2], sf::Vector2f(100, 100), 1);
-    GetComponent<VelocityComponent>()->Init(sf::Vector2f(0.0f, 0.0f), 1.0f);
+    GetComponent<SpriteComponent>()->Init(ResourceManager::m_textures[2], Settings::PlayerPosition, Settings::PlayerLayerDepth);
+    GetComponent<VelocityComponent>()->Init(Settings::PlayerVelocity, Settings::PlayerSpeed);
     GetComponent<InputComponent>()->Init();
     GetComponent<FaceCursorComponent>()->Init();
     GetComponent<GunComponent>()->Init(0.5f);

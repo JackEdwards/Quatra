@@ -1,6 +1,7 @@
 #ifndef PLAYER_HPP
 #define PLAYER_HPP
 
+#include "Settings.hpp"
 #include "ResourceManager.hpp"
 #include "Entity.hpp"
 #include "SpriteComponent.hpp"
