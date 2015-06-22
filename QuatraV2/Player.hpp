@@ -9,6 +9,8 @@
 #include "InputComponent.hpp"
 #include "FaceCursorComponent.hpp"
 #include "GunComponent.hpp"
+#include "RigidBodyComponent.hpp"
+#include "HealthComponent.hpp"
 
 class Player : public Entity
 {

@@ -2,7 +2,6 @@
 #define SETTINGS_HPP
 
 #include <SFML/Graphics.hpp>
-#include <unordered_map>
 #include "ResourcePath.hpp"
 
 class Settings
@@ -14,6 +13,15 @@ public:
     static sf::Vector2f PlayerVelocity;
     static int PlayerLayerDepth;
     static float PlayerSpeed;
+    static float PlayerReloadSpeed;
+    static int PlayerHealth;
+    static sf::Vector2f EnemyVelocity;
+    static int EnemyLayerDepth;
+    static float EnemySpeed;
+    static int EnemyDamage;
+    static int BulletLayerDepth;
+    static float BulletSpeed;
+    static int TileLayerDepth;
 
 public:
     virtual ~Settings() = 0;

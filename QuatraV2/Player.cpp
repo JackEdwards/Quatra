@@ -7,14 +7,15 @@ Player::Player()
     AddComponent<InputComponent>();
     AddComponent<FaceCursorComponent>();
     AddComponent<GunComponent>();
+    AddComponent<RigidBodyComponent>();
+    AddComponent<HealthComponent>();
 
     GetComponent<SpriteComponent>()->Init(ResourceManager::m_textures[2], Settings::PlayerPosition, Settings::PlayerLayerDepth);
     GetComponent<VelocityComponent>()->Init(Settings::PlayerVelocity, Settings::PlayerSpeed);
     GetComponent<InputComponent>()->Init();
     GetComponent<FaceCursorComponent>()->Init();
-    GetComponent<GunComponent>()->Init(0.5f);
+    GetComponent<GunComponent>()->Init(Settings::PlayerReloadSpeed);
+    GetComponent<HealthComponent>()->Init(Settings::PlayerHealth);
     
-    SpriteComponentPtr p_spriteComp = GetComponent<SpriteComponent>();
-    sf::Vector2u textureSize = p_spriteComp->m_sprite.getTexture()->getSize();
-    p_spriteComp->m_sprite.setOrigin(textureSize.x / 2, textureSize.x / 2);
+    GetComponent<SpriteComponent>()->SetCentreOrigin();
 }

@@ -12,6 +12,8 @@
 		041FAD7D1B2C6B3E0078B837 /* FaceCursorComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041FAD7B1B2C6B3E0078B837 /* FaceCursorComponent.cpp */; };
 		041FAD801B2C6B4C0078B837 /* FaceCursorSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041FAD7E1B2C6B4C0078B837 /* FaceCursorSystem.cpp */; };
 		041FAD901B2C9BAB0078B837 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 041FAD8E1B2C9BAB0078B837 /* Enemy.cpp */; };
+		0426C7391B388BA300C19449 /* HealthComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0426C7371B388BA300C19449 /* HealthComponent.cpp */; };
+		0426C73C1B388E0C00C19449 /* ImpactDamageComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0426C73A1B388E0C00C19449 /* ImpactDamageComponent.cpp */; };
 		042ACC231B3491F700605F96 /* CollisionSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 042ACC211B3491F700605F96 /* CollisionSystem.cpp */; };
 		046098FE1B29C5CD00231625 /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 046098FD1B29C5CD00231625 /* ResourcePath.mm */; };
 		046099011B29C5CD00231625 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 046099001B29C5CD00231625 /* main.cpp */; };
@@ -52,6 +54,10 @@
 		041FAD8A1B2C9A200078B837 /* ComponentType.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ComponentType.hpp; sourceTree = "<group>"; };
 		041FAD8E1B2C9BAB0078B837 /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
 		041FAD8F1B2C9BAB0078B837 /* Enemy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Enemy.hpp; sourceTree = "<group>"; };
+		0426C7371B388BA300C19449 /* HealthComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HealthComponent.cpp; sourceTree = "<group>"; };
+		0426C7381B388BA300C19449 /* HealthComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HealthComponent.hpp; sourceTree = "<group>"; };
+		0426C73A1B388E0C00C19449 /* ImpactDamageComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImpactDamageComponent.cpp; sourceTree = "<group>"; };
+		0426C73B1B388E0C00C19449 /* ImpactDamageComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ImpactDamageComponent.hpp; sourceTree = "<group>"; };
 		042ACC211B3491F700605F96 /* CollisionSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CollisionSystem.cpp; sourceTree = "<group>"; };
 		042ACC221B3491F700605F96 /* CollisionSystem.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CollisionSystem.hpp; sourceTree = "<group>"; };
 		046098F81B29C5CD00231625 /* QuatraV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuatraV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +144,8 @@
 				04D7ED831B309E01000A8A59 /* GunComponent.cpp */,
 				04D7ED891B30A38C000A8A59 /* PerishableComponent.cpp */,
 				04F014111B37B010005BE91B /* RigidBodyComponent.cpp */,
+				0426C7371B388BA300C19449 /* HealthComponent.cpp */,
+				0426C73A1B388E0C00C19449 /* ImpactDamageComponent.cpp */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -179,6 +187,8 @@
 			children = (
 				041FAD8A1B2C9A200078B837 /* ComponentType.hpp */,
 				046099201B29CB0F00231625 /* Component.hpp */,
+				0426C73B1B388E0C00C19449 /* ImpactDamageComponent.hpp */,
+				0426C7381B388BA300C19449 /* HealthComponent.hpp */,
 				041FAD7C1B2C6B3E0078B837 /* FaceCursorComponent.hpp */,
 				0460991F1B29CAD200231625 /* VelocityComponent.hpp */,
 				0460991D1B29C8E800231625 /* SpriteComponent.hpp */,
@@ -270,8 +280,8 @@
 			children = (
 				046099001B29C5CD00231625 /* main.cpp */,
 				046099121B29C66200231625 /* Game.cpp */,
-				04E44E841B32162B00FF03D0 /* ResourceManager.cpp */,
 				04F014141B37B110005BE91B /* Settings.cpp */,
+				04E44E841B32162B00FF03D0 /* ResourceManager.cpp */,
 				0403F4771B2B3E0000BCAAC4 /* Entities */,
 				0403F4781B2B3E0800BCAAC4 /* Components */,
 				0403F4791B2B3E0D00BCAAC4 /* Systems */,
@@ -384,6 +394,7 @@
 			files = (
 				04D7ED851B309E01000A8A59 /* GunComponent.cpp in Sources */,
 				04BD7A6D1B2DBF9100647C1F /* System.cpp in Sources */,
+				0426C73C1B388E0C00C19449 /* ImpactDamageComponent.cpp in Sources */,
 				0403F47F1B2BAADB00BCAAC4 /* MovementSystem.cpp in Sources */,
 				0460993D1B2B0E4800231625 /* Entity.cpp in Sources */,
 				046099401B2B11FE00231625 /* InputSystem.cpp in Sources */,
@@ -391,6 +402,7 @@
 				041FAD801B2C6B4C0078B837 /* FaceCursorSystem.cpp in Sources */,
 				04D7ED8B1B30A38C000A8A59 /* PerishableComponent.cpp in Sources */,
 				046099351B29D7B100231625 /* VelocityComponent.cpp in Sources */,
+				0426C7391B388BA300C19449 /* HealthComponent.cpp in Sources */,
 				046099461B2B120E00231625 /* RenderSystem.cpp in Sources */,
 				0460991C1B29C80600231625 /* Player.cpp in Sources */,
 				0403F4821B2BAEF300BCAAC4 /* PhysicsSystem.cpp in Sources */,

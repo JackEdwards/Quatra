@@ -16,3 +16,9 @@ void SpriteComponent::Init(sf::Texture &texture, sf::Vector2f position, int dept
     m_sprite.setRotation(rotation);
     m_depth = depth;
 }
+
+void SpriteComponent::SetCentreOrigin()
+{
+    sf::Vector2u textureSize = m_sprite.getTexture()->getSize();
+    m_sprite.setOrigin(textureSize.x / 2, textureSize.y / 2);
+}

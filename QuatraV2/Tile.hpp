@@ -1,6 +1,7 @@
 #ifndef TILE_HPP
 #define TILE_HPP
 
+#include "Settings.hpp"
 #include "ResourceManager.hpp"
 #include "Entity.hpp"
 #include "SpriteComponent.hpp"

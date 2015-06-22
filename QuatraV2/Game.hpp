@@ -37,6 +37,7 @@ private:
     
     sf::Font m_font;
     sf::Text m_text;
+    sf::Text m_text2;
     int m_fps;
     
 public:

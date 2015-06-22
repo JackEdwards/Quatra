@@ -15,6 +15,7 @@ public:
 public:
     SpriteComponent();
     void Init(sf::Texture& texture, sf::Vector2f position, int depth, float rotation = 0);
+    void SetCentreOrigin();
 };
 
 typedef std::shared_ptr<SpriteComponent> SpriteComponentPtr;
