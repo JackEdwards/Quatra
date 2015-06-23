@@ -2,9 +2,7 @@
 
 Tile::Tile(sf::IntRect sourceRect, sf::Vector2f position)
 {
-    AddComponent<TransformComponent>();
-    AddComponent<TextureComponent>();
+    AddComponent<SpriteComponent>();
 
-    GetComponent<TransformComponent>()->Init(position);
-    GetComponent<TextureComponent>()->Init(ResourceManager::Spritesheet, sourceRect);
+    GetComponent<SpriteComponent>()->Init(position, ResourceManager::Spritesheet, sourceRect);
 }

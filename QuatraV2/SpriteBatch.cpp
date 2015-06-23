@@ -11,32 +11,22 @@ void SpriteBatch::Begin()
     m_vertices.setPrimitiveType(sf::Quads);
 }
 
-void SpriteBatch::Draw(sf::Vector2f position)
+void SpriteBatch::Draw(sf::Sprite sprite)
 {
     m_vertices.resize(m_vertices.getVertexCount() + 4);
-    sf::Vertex* quad = &m_vertices[m_vertices.getVertexCount() - 4];
-    sf::Vector2u size = m_spritesheet->getSize();
 
-    quad[0].position = sf::Vector2f(position.x, position.y);
-    quad[1].position = sf::Vector2f(position.x + size.x, position.y);
-    quad[2].position = sf::Vector2f(position.x + size.x, position.y + size.y);
-    quad[3].position = sf::Vector2f(position.x, position.y + size.y);
-    
-    quad[0].texCoords = sf::Vector2f(0.0f, 0.0f);
-    quad[1].texCoords = sf::Vector2f(0.0f + size.x, 0.0f);
-    quad[2].texCoords = sf::Vector2f(0.0f + size.x, 0.0f + size.y);
-    quad[3].texCoords = sf::Vector2f(0.0f, 0.0f + size.y);
-}
-
-void SpriteBatch::Draw(sf::Vector2f position, sf::IntRect rect)
-{
-    m_vertices.resize(m_vertices.getVertexCount() + 4);
     sf::Vertex* quad = &m_vertices[m_vertices.getVertexCount() - 4];
+    sf::IntRect rect = sprite.getTextureRect();
+
+    sf::Vector2f topLeft = sprite.getTransform().transformPoint(sf::Vector2f(0.0f, 0.0f));
+    sf::Vector2f topRight = sprite.getTransform().transformPoint(sf::Vector2f(rect.width, 0.0f));
+    sf::Vector2f bottomRight = sprite.getTransform().transformPoint(sf::Vector2f(rect.width, rect.height));
+    sf::Vector2f bottomLeft = sprite.getTransform().transformPoint(sf::Vector2f(0.0f, rect.height));
     
-    quad[0].position = sf::Vector2f(position.x, position.y);
-    quad[1].position = sf::Vector2f(position.x + rect.width, position.y);
-    quad[2].position = sf::Vector2f(position.x + rect.width, position.y + rect.height);
-    quad[3].position = sf::Vector2f(position.x, position.y + rect.height);
+    quad[0].position = topLeft;
+    quad[1].position = topRight;
+    quad[2].position = bottomRight;
+    quad[3].position = bottomLeft;
     
     quad[0].texCoords = sf::Vector2f(rect.left, rect.top);
     quad[1].texCoords = sf::Vector2f(rect.left + rect.width, rect.top);

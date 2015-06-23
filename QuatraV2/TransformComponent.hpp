@@ -1,4 +1,4 @@
-#ifndef TRANSFORMCOMPONENT_HPP
+/*#ifndef TRANSFORMCOMPONENT_HPP
 #define TRANSFORMCOMPONENT_HPP
 
 #include "Component.hpp"
@@ -19,3 +19,4 @@ public:
 typedef std::shared_ptr<TransformComponent> TransformComponentPtr;
 
 #endif
+*/

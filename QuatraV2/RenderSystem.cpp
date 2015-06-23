@@ -2,17 +2,16 @@
 
 RenderSystem::RenderSystem()
 {
-    m_lock = ComponentType::Transform | ComponentType::Texture;
+    m_lock = ComponentType::Sprite;
 }
 
 void RenderSystem::Update(EntityPtrList& entities, SpriteBatch& spriteBatch)
 {
     for (EntityPtr& p_entity : entities) {
         if (KeyFitsLock(p_entity->m_types)) {
-            TransformComponentPtr p_transform = p_entity->GetComponent<TransformComponent>();
-            TextureComponentPtr p_texture = p_entity->GetComponent<TextureComponent>();
+            SpriteComponentPtr p_sprite = p_entity->GetComponent<SpriteComponent>();
 
-            spriteBatch.Draw(p_transform->m_position, p_texture->m_sourceRect);
+            spriteBatch.Draw(p_sprite->m_sprite);
         }
     }
 }

@@ -2,7 +2,7 @@
 #define DESTRUCTIONSYSTEM_HPP
 
 #include "System.hpp"
-#include "TransformComponent.hpp"
+#include "SpriteComponent.hpp"
 #include "PerishableComponent.hpp"
 
 class DestructionSystem : public System

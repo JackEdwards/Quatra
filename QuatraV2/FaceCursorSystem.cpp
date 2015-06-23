@@ -2,18 +2,19 @@
 
 FaceCursorSystem::FaceCursorSystem()
 {
-    m_lock = ComponentType::FaceCursor | ComponentType::Transform | ComponentType::Texture;
+    m_lock = ComponentType::FaceCursor | ComponentType::Sprite;
 }
 
 void FaceCursorSystem::Update(EntityPtrList& entities, sf::RenderWindow& window)
 {
     for (EntityPtr& p_entity : entities) {
         if (KeyFitsLock(p_entity->m_types)) {
-            TransformComponentPtr p_transform = p_entity->GetComponent<TransformComponent>();
+            SpriteComponentPtr p_sprite = p_entity->GetComponent<SpriteComponent>();
+            sf::Vector2f position = p_sprite->m_sprite.getPosition();
             
             // Get distance between sprite and mouses
-            int x = p_transform->m_position.x - sf::Mouse::getPosition(window).x;
-            int y = p_transform->m_position.y - sf::Mouse::getPosition(window).y;
+            int x = position.x - sf::Mouse::getPosition(window).x;
+            int y = position.y - sf::Mouse::getPosition(window).y;
             sf::Vector2f distance = sf::Vector2f(x, y);
             
             // Calculates rotation angle in radians and converts to degrees
@@ -27,7 +28,7 @@ void FaceCursorSystem::Update(EntityPtrList& entities, sf::RenderWindow& window)
             
             // 90 is subtracted from the angle because the angle result of atan2
             // is relative to the negative X axis
-            p_transform->m_rotation = angle - 90;
+            p_sprite->m_sprite.setRotation(angle - 90);
         }
     }
 }

@@ -3,16 +3,15 @@
 
 enum ComponentType
 {
-    Transform    = 1 << 0,
-    Texture      = 1 << 1,
-    Velocity     = 1 << 2,
-    Input        = 1 << 3,
-    FaceCursor   = 1 << 4,
-    Gun          = 1 << 5,
-    Perishable   = 1 << 6,
-    RigidBody    = 1 << 7,
-    Health       = 1 << 8,
-    ImpactDamage = 1 << 9
+    Sprite       = 1 << 0,
+    Velocity     = 1 << 1,
+    Input        = 1 << 2,
+    FaceCursor   = 1 << 3,
+    Gun          = 1 << 4,
+    Perishable   = 1 << 5,
+    RigidBody    = 1 << 6,
+    Health       = 1 << 7,
+    ImpactDamage = 1 << 8
 };
 
 #endif

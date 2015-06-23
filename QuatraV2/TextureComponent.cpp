@@ -1,4 +1,4 @@
-#include "TextureComponent.hpp"
+/*#include "TextureComponent.hpp"
 
 TextureComponent::TextureComponent()
 {
@@ -16,4 +16,4 @@ void TextureComponent::Init(sf::Texture& texture, sf::IntRect rect)
 {
     m_texture = texture;
     m_sourceRect = rect;
-}
+}*/

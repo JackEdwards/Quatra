@@ -31,6 +31,7 @@
 		04638CF01B3619620032FB8C /* Entity.tpp in Resources */ = {isa = PBXBuildFile; fileRef = 04638CEF1B3619620032FB8C /* Entity.tpp */; };
 		04BD7A6D1B2DBF9100647C1F /* System.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04BD7A6C1B2DBF9100647C1F /* System.cpp */; };
 		04BD7A771B2DC45200647C1F /* bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 04BD7A761B2DC45200647C1F /* bullet.png */; };
+		04C543931B39C7230066F6D4 /* SpriteComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04C543911B39C7230066F6D4 /* SpriteComponent.cpp */; };
 		04D7ED821B309DF5000A8A59 /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04D7ED801B309DF5000A8A59 /* Bullet.cpp */; };
 		04D7ED851B309E01000A8A59 /* GunComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04D7ED831B309E01000A8A59 /* GunComponent.cpp */; };
 		04D7ED881B309E0D000A8A59 /* FiringSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04D7ED861B309E0D000A8A59 /* FiringSystem.cpp */; };
@@ -94,6 +95,8 @@
 		04BD7A6C1B2DBF9100647C1F /* System.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = System.cpp; sourceTree = "<group>"; };
 		04BD7A761B2DC45200647C1F /* bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.png; sourceTree = "<group>"; };
 		04BD7A981B2DFFA400647C1F /* Math.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Math.hpp; sourceTree = "<group>"; };
+		04C543911B39C7230066F6D4 /* SpriteComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteComponent.cpp; sourceTree = "<group>"; };
+		04C543921B39C7230066F6D4 /* SpriteComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SpriteComponent.hpp; sourceTree = "<group>"; };
 		04D7ED801B309DF5000A8A59 /* Bullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bullet.cpp; sourceTree = "<group>"; };
 		04D7ED811B309DF5000A8A59 /* Bullet.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Bullet.hpp; sourceTree = "<group>"; };
 		04D7ED831B309E01000A8A59 /* GunComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GunComponent.cpp; sourceTree = "<group>"; };
@@ -143,6 +146,7 @@
 		0403F4781B2B3E0800BCAAC4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				04C543911B39C7230066F6D4 /* SpriteComponent.cpp */,
 				0426C7431B38FFC400C19449 /* TransformComponent.cpp */,
 				0426C7461B38FFCE00C19449 /* TextureComponent.cpp */,
 				046099341B29D7B100231625 /* VelocityComponent.cpp */,
@@ -194,6 +198,7 @@
 			children = (
 				041FAD8A1B2C9A200078B837 /* ComponentType.hpp */,
 				046099201B29CB0F00231625 /* Component.hpp */,
+				04C543921B39C7230066F6D4 /* SpriteComponent.hpp */,
 				0426C7441B38FFC400C19449 /* TransformComponent.hpp */,
 				0426C7471B38FFCE00C19449 /* TextureComponent.hpp */,
 				0426C73B1B388E0C00C19449 /* ImpactDamageComponent.hpp */,
@@ -404,6 +409,7 @@
 			files = (
 				04D7ED851B309E01000A8A59 /* GunComponent.cpp in Sources */,
 				04BD7A6D1B2DBF9100647C1F /* System.cpp in Sources */,
+				04C543931B39C7230066F6D4 /* SpriteComponent.cpp in Sources */,
 				0426C73C1B388E0C00C19449 /* ImpactDamageComponent.cpp in Sources */,
 				0403F47F1B2BAADB00BCAAC4 /* MovementSystem.cpp in Sources */,
 				0460993D1B2B0E4800231625 /* Entity.cpp in Sources */,

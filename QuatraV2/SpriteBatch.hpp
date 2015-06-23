@@ -14,8 +14,7 @@ private:
 public:
     SpriteBatch();
     void Begin();
-    void Draw(sf::Vector2f position);
-    void Draw(sf::Vector2f position, sf::IntRect sourceRect);
+    void Draw(sf::Sprite sprite);
     void End(sf::RenderWindow& window);
 };
 

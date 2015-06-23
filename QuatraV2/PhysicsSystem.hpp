@@ -4,7 +4,7 @@
 #include <math.h>
 #include "System.hpp"
 #include "VelocityComponent.hpp"
-#include "TransformComponent.hpp"
+#include "SpriteComponent.hpp"
 
 class PhysicsSystem : public System
 {

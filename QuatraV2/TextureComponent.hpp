@@ -1,4 +1,4 @@
-#ifndef TEXTURECOMPONENT_HPP
+/*#ifndef TEXTURECOMPONENT_HPP
 #define TEXTURECOMPONENT_HPP
 
 #include "Component.hpp"
@@ -18,3 +18,4 @@ public:
 typedef std::shared_ptr<TextureComponent> TextureComponentPtr;
 
 #endif
+*/

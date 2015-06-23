@@ -7,7 +7,7 @@ Game::Game()
     LoadMap();
     m_entities.push_back(std::make_unique<Player>());
     m_entities.push_back(std::make_unique<Enemy>(sf::Vector2f(500, 500)));
-    m_window.setVerticalSyncEnabled(true);
+    m_window.setVerticalSyncEnabled(false);
     
     m_font.loadFromFile(resourcePath() + "sansation.ttf");
     m_text.setFont(m_font);

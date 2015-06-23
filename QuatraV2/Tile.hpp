@@ -4,8 +4,7 @@
 #include "Settings.hpp"
 #include "ResourceManager.hpp"
 #include "Entity.hpp"
-#include "TransformComponent.hpp"
-#include "TextureComponent.hpp"
+#include "SpriteComponent.hpp"
 
 class Tile : public Entity
 {

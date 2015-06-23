@@ -2,14 +2,12 @@
 
 Bullet::Bullet(sf::Vector2f position, sf::Vector2f velocity, float rotation)
 {
-    AddComponent<TransformComponent>();
-    AddComponent<TextureComponent>();
+    AddComponent<SpriteComponent>();
     AddComponent<VelocityComponent>();
     AddComponent<PerishableComponent>();
     AddComponent<RigidBodyComponent>();
     
-    GetComponent<TransformComponent>()->Init(position);
-    GetComponent<TextureComponent>()->Init(ResourceManager::BulletTexture);
+    GetComponent<SpriteComponent>()->Init(position, ResourceManager::BulletTexture, rotation);
     GetComponent<VelocityComponent>()->Init(velocity, Settings::BulletSpeed);
     GetComponent<PerishableComponent>()->Init(PerishCondition::OutOfBounds);
 }
