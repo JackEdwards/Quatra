@@ -2,7 +2,7 @@
 
 PhysicsSystem::PhysicsSystem()
 {
-    m_lock = ComponentType::Velocity | ComponentType::Sprite;
+    m_lock = ComponentType::Velocity | ComponentType::Transform;
 }
 
 void PhysicsSystem::Update(EntityPtrList& entities, float dt)
@@ -10,12 +10,13 @@ void PhysicsSystem::Update(EntityPtrList& entities, float dt)
     for (EntityPtr& p_entity : entities) {
         if (KeyFitsLock(p_entity->m_types)) {
             VelocityComponentPtr p_velocity = p_entity->GetComponent<VelocityComponent>();
-            SpriteComponentPtr p_sprite = p_entity->GetComponent<SpriteComponent>();
-            sf::Sprite& r_sprite = p_sprite->m_sprite;
+            TransformComponentPtr p_transform = p_entity->GetComponent<TransformComponent>();
+            
             sf::Vector2f velocity = p_velocity->m_velocity;
             float speed = p_velocity->m_speed;
 
-            r_sprite.move((velocity * dt) * speed);
+            sf::Vector2f offset = (velocity * dt) * speed;
+            p_transform->m_position = p_transform->m_position + offset;
         }
     }
 }

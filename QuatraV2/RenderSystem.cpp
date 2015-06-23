@@ -2,26 +2,17 @@
 
 RenderSystem::RenderSystem()
 {
-    m_lock = ComponentType::Sprite;
+    m_lock = ComponentType::Transform | ComponentType::Texture;
 }
 
-void RenderSystem::Update(EntityPtrList& entities, sf::RenderWindow& window)
+void RenderSystem::Update(EntityPtrList& entities, SpriteBatch& spriteBatch)
 {
-    std::vector<std::vector<sf::Sprite>> sprites(SpriteComponent::MAX_DEPTH + 1);
-
     for (EntityPtr& p_entity : entities) {
         if (KeyFitsLock(p_entity->m_types)) {
-            SpriteComponentPtr p_sprite = p_entity->GetComponent<SpriteComponent>();
-            int depth = p_sprite->m_depth;
-            sf::Sprite sprite = p_sprite->m_sprite;
+            TransformComponentPtr p_transform = p_entity->GetComponent<TransformComponent>();
+            TextureComponentPtr p_texture = p_entity->GetComponent<TextureComponent>();
 
-            sprites.at(depth).push_back(sprite);
-        }
-    }
-    
-    for (std::vector<sf::Sprite> spriteList : sprites) {
-        for (sf::Sprite sprite : spriteList) {
-            window.draw(sprite);
+            spriteBatch.Draw(p_transform->m_position, p_texture->m_sourceRect);
         }
     }
 }

@@ -2,13 +2,15 @@
 #define RENDERSYSTEM_HPP
 
 #include "System.hpp"
-#include "SpriteComponent.hpp"
+#include "TransformComponent.hpp"
+#include "TextureComponent.hpp"
+#include "SpriteBatch.hpp"
 
 class RenderSystem : public System
 {
 public:
     RenderSystem();
-    void Update(EntityPtrList& entities, sf::RenderWindow& window);
+    void Update(EntityPtrList& entities, SpriteBatch& spriteBatch);
 };
 
 #endif

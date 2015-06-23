@@ -9,4 +9,6 @@ public:
     RigidBodyComponent();
 };
 
+typedef std::shared_ptr<RigidBodyComponent> RigidBodyComponentPtr;
+
 #endif

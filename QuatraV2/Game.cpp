@@ -4,12 +4,9 @@ Game::Game()
 : m_window(sf::VideoMode(Settings::WindowWidth, Settings::WindowHeight), "Quatra", sf::Style::Close)
 {
     ResourceManager::LoadResources();
+    LoadMap();
     m_entities.push_back(std::make_unique<Player>());
     m_entities.push_back(std::make_unique<Enemy>(sf::Vector2f(500, 500)));
-    m_entities.push_back(std::make_unique<Enemy>(sf::Vector2f(500, 500)));
-    m_entities.push_back(std::make_unique<Enemy>(sf::Vector2f(500, 500)));
-    m_entities.push_back(std::make_unique<Enemy>(sf::Vector2f(500, 500)));
-    LoadMap();
     m_window.setVerticalSyncEnabled(true);
     
     m_font.loadFromFile(resourcePath() + "sansation.ttf");
@@ -18,16 +15,13 @@ Game::Game()
     m_text.setColor(sf::Color::Red);
     m_text.setPosition(20, 20);
     m_fps = 0.0f;
-    m_text2.setFont(m_font);
-    m_text2.setString("Health: ");
-    m_text2.setColor(sf::Color::Red);
-    m_text2.setPosition(20, 60);
 }
 
 void Game::Run()
 {
     sf::Clock clock;
     float lastTime = 0.0f;
+    sf::Clock fpsClock;
 
     while (m_window.isOpen()) {
         Update();
@@ -35,12 +29,13 @@ void Game::Run()
         
         float currentTime = clock.restart().asSeconds();
         m_fps = 1.0f / currentTime;
-        if (currentTime != lastTime) {
+
+        if (fpsClock.getElapsedTime().asSeconds() > 0.3f) {
             m_text.setString("FPS: " + std::to_string(m_fps));
+            fpsClock.restart();
         }
+
         lastTime = currentTime;
-        
-        m_text2.setString("Health: " + std::to_string(m_entities[0]->GetComponent<HealthComponent>()->m_health));
     }
 }
 
@@ -61,10 +56,12 @@ void Game::Update()
 void Game::Render()
 {
     m_window.clear(sf::Color::White);
-
-    m_render.Update(m_entities, m_window);
+    
+    m_spriteBatch.Begin();
+    m_render.Update(m_entities, m_spriteBatch);
+    m_spriteBatch.End(m_window);
+    
     m_window.draw(m_text);
-    m_window.draw(m_text2);
 
     m_window.display();
 }
@@ -85,7 +82,7 @@ void Game::LoadMap()
     const int MAP_WIDTH = 24;
     const int MAP_HEIGHT = 15;
 
-    int map[MAP_HEIGHT][MAP_WIDTH] = {
+    int map[15][24] = {
         {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3},
         {6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4},
         {6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4},
@@ -105,7 +102,7 @@ void Game::LoadMap()
     
     for (int i = 0; i < MAP_HEIGHT; ++i) {
         for (int j = 0; j < MAP_WIDTH; ++j) {
-            m_entities.push_back(std::make_unique<Tile>(ResourceManager::m_textures[map[i][j]], sf::Vector2f(j * ResourceManager::TILE_WIDTH, i * ResourceManager::TILE_HEIGHT)));
+            m_entities.push_back(std::make_unique<Tile>(ResourceManager::SourceRects[map[i][j]], sf::Vector2f(j * ResourceManager::TILE_WIDTH, i * ResourceManager::TILE_HEIGHT)));
         }
     }
 }

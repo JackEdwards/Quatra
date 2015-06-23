@@ -4,12 +4,23 @@
 #include "ResourcePath.hpp"
 #include <SFML/Graphics.hpp>
 
+enum SpriteType
+{
+    EnemySprite,
+    GroundSprite,
+    PlayerSprite,
+    TopWallSprite,
+    RightWallSprite,
+    BottomWallSprite,
+    LeftWallSprite
+};
+
 class ResourceManager
 {
 public:
-    static sf::Texture m_bulletTexture;
-    static std::vector<sf::Texture> m_textures;
-    static sf::Texture m_spriteSheet;
+    static sf::Texture Spritesheet;
+    static sf::Texture BulletTexture;
+    static std::vector<sf::IntRect> SourceRects;
     static const int TILE_WIDTH = 80;
     static const int TILE_HEIGHT = 80;
 

@@ -2,7 +2,7 @@
 #define COLLISIONSYSTEM_HPP
 
 #include "System.hpp"
-#include "SpriteComponent.hpp"
+#include "TransformComponent.hpp"
 #include "VelocityComponent.hpp"
 #include "HealthComponent.hpp"
 #include "ImpactDamageComponent.hpp"

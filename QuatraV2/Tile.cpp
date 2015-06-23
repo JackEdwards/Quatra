@@ -1,8 +1,10 @@
 #include "Tile.hpp"
 
-Tile::Tile(sf::Texture& texture, sf::Vector2f position)
+Tile::Tile(sf::IntRect sourceRect, sf::Vector2f position)
 {
-    AddComponent<SpriteComponent>();
+    AddComponent<TransformComponent>();
+    AddComponent<TextureComponent>();
 
-    GetComponent<SpriteComponent>()->Init(texture, position, Settings::TileLayerDepth);
+    GetComponent<TransformComponent>()->Init(position);
+    GetComponent<TextureComponent>()->Init(ResourceManager::Spritesheet, sourceRect);
 }

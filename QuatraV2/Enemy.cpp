@@ -2,9 +2,11 @@
 
 Enemy::Enemy(sf::Vector2f position)
 {
-    AddComponent<SpriteComponent>();
+    AddComponent<TransformComponent>();
+    AddComponent<TextureComponent>();
     AddComponent<ImpactDamageComponent>();
 
-    GetComponent<SpriteComponent>()->Init(ResourceManager::m_textures[0], position, Settings::EnemyLayerDepth);
+    GetComponent<TransformComponent>()->Init(position);
+    GetComponent<TextureComponent>()->Init(ResourceManager::Spritesheet, ResourceManager::SourceRects[0]);
     GetComponent<ImpactDamageComponent>()->Init(Settings::EnemyDamage);
 }

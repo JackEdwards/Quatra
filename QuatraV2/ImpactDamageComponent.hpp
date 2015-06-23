@@ -13,4 +13,6 @@ public:
     void Init(int damage);
 };
 
+typedef std::shared_ptr<ImpactDamageComponent> ImpactDamageComponentPtr;
+
 #endif

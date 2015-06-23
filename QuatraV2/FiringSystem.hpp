@@ -4,7 +4,7 @@
 #include "Math.hpp"
 #include "System.hpp"
 #include "InputComponent.hpp"
-#include "SpriteComponent.hpp"
+#include "TransformComponent.hpp"
 #include "GunComponent.hpp"
 #include "Bullet.hpp"
 

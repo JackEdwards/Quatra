@@ -1,17 +1,16 @@
 #include "ResourceManager.hpp"
 
-sf::Texture ResourceManager::m_bulletTexture;
-std::vector<sf::Texture> ResourceManager::m_textures(7);
-sf::Texture ResourceManager::m_spriteSheet;
+sf::Texture ResourceManager::Spritesheet;
+sf::Texture ResourceManager::BulletTexture;
+std::vector<sf::IntRect> ResourceManager::SourceRects(7);
 
 void ResourceManager::LoadResources()
 {
-    ResourceManager::m_spriteSheet.loadFromFile(resourcePath() + "spritesheet.png");
-
-    int tileCount = m_spriteSheet.getSize().x / TILE_WIDTH;
-    for (int i = 0; i < tileCount; ++i) {
-        ResourceManager::m_textures[i].loadFromFile(resourcePath() + "spritesheet.png", sf::IntRect(i * TILE_WIDTH, 0, TILE_WIDTH, TILE_HEIGHT));
+    ResourceManager::Spritesheet.loadFromFile(resourcePath() + "spritesheet.png");
+    
+    for (int i = 0; i < 7; ++i) {
+        ResourceManager::SourceRects[i] = sf::IntRect(i * TILE_WIDTH, 0, TILE_WIDTH, TILE_HEIGHT);
     }
     
-    ResourceManager::m_bulletTexture.loadFromFile(resourcePath() + "bullet.png");
+    ResourceManager::BulletTexture.loadFromFile(resourcePath() + "bullet.png");
 }

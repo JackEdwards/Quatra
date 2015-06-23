@@ -3,7 +3,8 @@
 
 #include "Math.hpp"
 #include "System.hpp"
-#include "SpriteComponent.hpp"
+#include "TransformComponent.hpp"
+#include "TextureComponent.hpp"
 
 class FaceCursorSystem : public System
 {

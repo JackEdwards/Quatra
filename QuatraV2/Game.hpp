@@ -4,6 +4,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "ResourcePath.hpp"
+#include "SpriteBatch.hpp"
 #include "Settings.hpp"
 #include "ResourceManager.hpp"
 #include "Entity.hpp"
@@ -34,10 +35,10 @@ private:
     DestructionSystem m_destruction;
     CollisionSystem m_collision;
     RenderSystem m_render;
+    SpriteBatch m_spriteBatch;
     
     sf::Font m_font;
     sf::Text m_text;
-    sf::Text m_text2;
     int m_fps;
     
 public:

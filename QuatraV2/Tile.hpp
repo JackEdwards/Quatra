@@ -4,12 +4,13 @@
 #include "Settings.hpp"
 #include "ResourceManager.hpp"
 #include "Entity.hpp"
-#include "SpriteComponent.hpp"
+#include "TransformComponent.hpp"
+#include "TextureComponent.hpp"
 
 class Tile : public Entity
 {
 public:
-    Tile(sf::Texture& texture, sf::Vector2f position);
+    Tile(sf::IntRect sourceRect, sf::Vector2f position);
 };
 
 #endif

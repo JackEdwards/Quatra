@@ -12,4 +12,6 @@ public:
     void Init(int health);
 };
 
+typedef std::shared_ptr<HealthComponent> HealthComponentPtr;
+
 #endif

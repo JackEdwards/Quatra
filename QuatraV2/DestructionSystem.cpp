@@ -2,16 +2,16 @@
 
 DestructionSystem::DestructionSystem()
 {
-    m_lock = ComponentType::Perishable | ComponentType::Sprite;
+    m_lock = ComponentType::Perishable | ComponentType::Transform;
 }
 
 void DestructionSystem::Update(EntityPtrList& entities)
 {
     for (auto it = entities.begin(); it != entities.end();) {
         if (KeyFitsLock((*it)->m_types)) {
-            SpriteComponentPtr p_sprite = (*it)->GetComponent<SpriteComponent>();
+            TransformComponentPtr p_transform = (*it)->GetComponent<TransformComponent>();
             PerishableComponentPtr p_perishable = (*it)->GetComponent<PerishableComponent>();
-            sf::Vector2f position = p_sprite->m_sprite.getPosition();
+            sf::Vector2f position = p_transform->m_position;
             bool shouldPerish = false;
             
             if (p_perishable->m_perishCondition == PerishCondition::OutOfBounds) {
